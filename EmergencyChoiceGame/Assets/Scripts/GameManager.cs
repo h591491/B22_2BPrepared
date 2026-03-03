@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float timer = 0f;
-    public static string lastSavedScene = "intro_animation";
+    public string lastSavedScene = "intro_animation";
+    public bool timerRunning = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         if(Instance == null)
         {
@@ -24,7 +25,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        if (timerRunning)
+        {
+            timer += Time.deltaTime;
+        }
+        
     }
 
     public void SaveCheckpoint()
