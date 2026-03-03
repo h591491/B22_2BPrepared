@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/where_to_stop.unity
     guid: 1fa1576c0cabe5d48b46c8e739b8f5f0
+  - enabled: 1
+    path: Assets/Scenes/intro_animation.unity
+    guid: 0dd51953952d01944bbc7d5d9651647c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

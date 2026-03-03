@@ -1,5 +1,6 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour
 {
@@ -17,4 +18,17 @@ public class GameOverUI : MonoBehaviour
     {
         
     }
+
+    public void LoadCheckpointScene()
+    {
+        string lastSavedScene = GameManager.lastSavedScene;
+        SceneManager.LoadScene(lastSavedScene);
+    }
+
+    public void LoadStartScene()
+    {
+        string lastSavedScene = "intro_animation";
+        SceneManager.LoadScene(lastSavedScene);
+    }
+
 }

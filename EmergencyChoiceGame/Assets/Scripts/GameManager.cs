@@ -1,9 +1,12 @@
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float timer = 0f;
+    public static string lastSavedScene = "intro_animation";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,4 +26,16 @@ public class GameManager : MonoBehaviour
     {
         timer += Time.deltaTime;
     }
+
+    public void SaveCheckpoint()
+    {
+        lastSavedScene = SceneManager.GetActiveScene().name;
+    }
+
+    public void LoadScene(string scenename)
+    {
+        SceneManager.LoadScene(scenename);
+    }
+
+    
 }
