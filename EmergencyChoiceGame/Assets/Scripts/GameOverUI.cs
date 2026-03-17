@@ -27,11 +27,7 @@ public class GameOverUI : MonoBehaviour
 
     public void LoadStartScene()
     {
-
-        GameManager.Instance.timerRunning = false;
-        GameManager.Instance.timer = 0f;
-        GameManager.Instance.lastSavedScene = "intro_animation";
-
+        GameManager.Instance.ResetGame();
         SceneManager.LoadScene("intro_animation");
     }
 

@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/intro_animation.unity
     guid: 0dd51953952d01944bbc7d5d9651647c
   - enabled: 1
-    path: Assets/Scenes/next_scene(empty).unity
+    path: Assets/Scenes/own_safety_inside_car.unity
     guid: 7a19e0d3e429f6747975f589ea800985
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

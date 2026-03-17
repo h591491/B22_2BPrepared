@@ -635,7 +635,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: next_scene(empty)
+          m_StringArgument: own_safety_inside_car
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1089153462
@@ -1055,7 +1055,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: next_scene(empty)
+          m_StringArgument: own_safety_inside_car
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1204804154

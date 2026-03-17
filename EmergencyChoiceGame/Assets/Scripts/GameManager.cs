@@ -1,17 +1,27 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
     public float timer = 0f;
     public string lastSavedScene = "intro_animation";
     public bool timerRunning = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public bool stoppedNearby = false;
+    public bool stoppedFurtherAway = false;
+
+    public bool harRefleksvest = false;
+    public bool harNodblink = false;
+    public bool harHandbrekk = false;
+    public bool harVarsletNodetat = false;
+
+    public int danger = 0;
+
     void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -22,14 +32,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (timerRunning)
         {
             timer += Time.deltaTime;
         }
-        
     }
 
     public void SaveCheckpoint()
@@ -37,10 +45,25 @@ public class GameManager : MonoBehaviour
         lastSavedScene = SceneManager.GetActiveScene().name;
     }
 
-    public void LoadScene(string scenename)
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(scenename);
+        SceneManager.LoadScene(sceneName);
     }
 
-    
+    public void ResetGame()
+    {
+        timer = 0f;
+        timerRunning = false;
+        lastSavedScene = "intro_animation";
+
+        stoppedNearby = false;
+        stoppedFurtherAway = false;
+
+        harRefleksvest = false;
+        harNodblink = false;
+        harHandbrekk = false;
+        harVarsletNodetat = false;
+
+        danger = 0;
+    }
 }
