@@ -10,7 +10,12 @@ public class MouseHover : MonoBehaviour
     public TMP_Text hoverText;
 
     public bool loadSceneOnClick = false;
+    public bool saveState = false;
     public string nextScene;
+
+    public string objectID;
+
+    public sceneloader_2b sceneLoader;
 
     void Start()
     {
@@ -33,12 +38,18 @@ public class MouseHover : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(loadSceneOnClick)
+        if (saveState)
+        {
+            sceneLoader.ShowDialogueBox(nextScene);
+        }
+        if (loadSceneOnClick)
         {
             GameManager.Instance.LoadScene(nextScene);
         }
         else
         {
+            GameManager.Instance.SetObjectCollected(objectID);
+
             gameObject.SetActive(false);
             hoverText.gameObject.SetActive(false);
         }       

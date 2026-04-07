@@ -4455,7 +4455,7 @@ MonoBehaviour:
   text: "G\xE5 ut av bilen"
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 1
-  nextScene: next_scene(empty)
+  nextScene: 2b_bringFromCar
 --- !u!61 &1136806870
 BoxCollider2D:
   m_ObjectHideFlags: 0
