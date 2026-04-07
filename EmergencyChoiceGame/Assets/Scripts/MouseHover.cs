@@ -15,6 +15,8 @@ public class MouseHover : MonoBehaviour
 
     public string objectID;
 
+    public sceneloader_2b sceneLoader;
+
     void Start()
     {
         originalScale = transform.localScale;
@@ -36,12 +38,12 @@ public class MouseHover : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(loadSceneOnClick)
+        if (saveState)
         {
-            if (saveState)
-            {
-                GameManager.Instance.SetObjectCollected(objectID);
-            }
+            sceneLoader.ShowDialogueBox(nextScene);
+        }
+        if (loadSceneOnClick)
+        {
             GameManager.Instance.LoadScene(nextScene);
         }
         else
