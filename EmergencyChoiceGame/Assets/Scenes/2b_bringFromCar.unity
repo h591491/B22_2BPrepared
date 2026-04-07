@@ -406,6 +406,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142234783}
   m_CullTransparentMesh: 1
+--- !u!1 &205672942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 205672944}
+  - component: {fileID: 205672943}
+  m_Layer: 0
+  m_Name: sceneloader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &205672943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205672942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756e6a6fe27bc354fac4e1c015fd55da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::sceneloader_2b
+  objects:
+  - {fileID: 948604872}
+  - {fileID: 1314789904}
+  - {fileID: 476672274}
+--- !u!4 &205672944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205672942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.72504, y: -1.01696, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476672273
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +489,9 @@ MonoBehaviour:
   text: Warning triangle
   hoverText: {fileID: 1863553454}
   loadSceneOnClick: 1
+  saveState: 1
   nextScene: Minigame_warningTriangle
+  objectID: triangle
 --- !u!61 &476672275
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -556,7 +606,7 @@ Transform:
   m_GameObject: {fileID: 476672273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 5.38, y: -2.03, z: 0}
+  m_LocalPosition: {x: 5.44, y: -1.47, z: 0}
   m_LocalScale: {x: 0.08544676, y: 0.08544676, z: 0.08544676}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -672,7 +722,9 @@ MonoBehaviour:
   text: First aid kit
   hoverText: {fileID: 1863553454}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: firstAidKit
 --- !u!61 &948604873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -920,7 +972,9 @@ MonoBehaviour:
   text: Fire extinguisher
   hoverText: {fileID: 1863553454}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: extinguisher
 --- !u!212 &1314789906
 SpriteRenderer:
   serializedVersion: 2
@@ -1318,7 +1372,9 @@ MonoBehaviour:
   text: Head to the crash site
   hoverText: {fileID: 1863553454}
   loadSceneOnClick: 1
+  saveState: 0
   nextScene: next_scene(empty)
+  objectID: 
 --- !u!61 &1897579079
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1449,3 +1505,4 @@ SceneRoots:
   - {fileID: 1314789907}
   - {fileID: 948604875}
   - {fileID: 1897579081}
+  - {fileID: 205672944}

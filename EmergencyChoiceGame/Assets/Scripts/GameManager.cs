@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,11 @@ public class GameManager : MonoBehaviour
     public float timer = 0f;
     public string lastSavedScene = "intro_animation";
     public bool timerRunning = false;
+
+
+    // scene: 2b_bringFromCar states:
+    public HashSet<string> collectedObjects = new HashSet<string>();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -42,5 +48,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scenename);
     }
 
-    
+    // scene: 2b_bringFromCar and triangle minigame
+    public void SetObjectCollected(string id)
+    {
+        collectedObjects.Add(id);
+    }
+
+    public bool IsObjectCollected(string id)
+    {
+        return collectedObjects.Contains(id);
+    }
+
 }
