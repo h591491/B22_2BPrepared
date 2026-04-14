@@ -630,7 +630,7 @@ MonoBehaviour:
   loadSceneOnClick: 0
   saveState: 1
   nextScene: Minigame_warningTriangle
-  objectID: triangle
+  objectID: brought_triangle
   sceneLoader: {fileID: 205672943}
 --- !u!61 &476672275
 BoxCollider2D:
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   loadSceneOnClick: 0
   saveState: 0
   nextScene: 
-  objectID: firstAidKit
+  objectID: brought_first_aid
   sceneLoader: {fileID: 0}
 --- !u!61 &948604873
 BoxCollider2D:
@@ -1677,7 +1677,7 @@ MonoBehaviour:
   loadSceneOnClick: 0
   saveState: 0
   nextScene: 
-  objectID: extinguisher
+  objectID: brought_extinguisher
   sceneLoader: {fileID: 0}
 --- !u!212 &1314789906
 SpriteRenderer:
@@ -2077,7 +2077,7 @@ MonoBehaviour:
   loadSceneOnClick: 1
   saveState: 0
   nextScene: next_scene(empty)
-  objectID: 
+  objectID: headed_to_crash
   sceneLoader: {fileID: 0}
 --- !u!61 &1897579079
 BoxCollider2D:

@@ -1037,10 +1037,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "Skru p\xE5 n\xF8dblink"
+  text: Turn on the hazard lights
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: hazards_on
+  sceneLoader: {fileID: 0}
 --- !u!1 &181818677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,8 +2340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 281.05182}
-  m_SizeDelta: {x: 769.4103, y: 61.5032}
+  m_AnchoredPosition: {x: 14.643, y: 287.6565}
+  m_SizeDelta: {x: 798.7, y: 74.7126}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542418198
 MonoBehaviour:
@@ -2360,7 +2363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hva gj\xF8r du f\xF8r du g\xE5r ut av bilen?"
+  m_text: What do you do before you get out of the car?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3801,10 +3804,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "Ta p\xE5 refleksvesten"
+  text: Put on the reflective vest
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: vest_on
+  sceneLoader: {fileID: 0}
 --- !u!61 &915725020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4306,10 +4312,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.2
-  text: "Info: Klikk p\xE5 objekter"
+  text: ' Info: Click on objects'
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!58 &1106060163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4452,10 +4461,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "G\xE5 ut av bilen"
+  text: ' Get out of the car'
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 1
+  saveState: 0
   nextScene: 2b_bringFromCar
+  objectID: left_car
+  sceneLoader: {fileID: 0}
 --- !u!61 &1136806870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6633,8 +6645,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 186.88623}
-  m_SizeDelta: {x: 471.7185, y: 62.4096}
+  m_AnchoredPosition: {x: 89.068, y: 164}
+  m_SizeDelta: {x: 649.85, y: 89.1483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864095297
 MonoBehaviour:
@@ -6964,10 +6976,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "Ring n\xF8detatene"
+  text: Call the emergency services
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: called_emergency
+  sceneLoader: {fileID: 0}
 --- !u!61 &1913931377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7639,10 +7654,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "T\xE5 p\xE5 parkeringsbremsen"
+  text: Apply the parking brake
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: parking_brake_on
+  sceneLoader: {fileID: 0}
 --- !u!58 &2140491430
 CircleCollider2D:
   m_ObjectHideFlags: 0
