@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -10,21 +11,30 @@ public class MouseHover : MonoBehaviour
     public TMP_Text hoverText;
 
     public bool loadSceneOnClick = false;
-    public bool saveState = false;
+    public bool loadDialogueBox = false;
     public string nextScene;
 
     public string objectID;
 
     public sceneloader_2b sceneLoader;
 
+    private bool active;
+
     void Start()
     {
         originalScale = transform.localScale;
         hoverText.gameObject.SetActive(false);
+
+        active = true;
     }
 
     void OnMouseEnter()
     {
+        if (!active)
+        {
+            return;
+        }
+
         hoverText.text = text;
         transform.localScale = originalScale * scaleMultiplier;
         hoverText.gameObject.SetActive(true);
@@ -32,14 +42,28 @@ public class MouseHover : MonoBehaviour
 
     void OnMouseExit()
     {
+        if (!active)
+        {
+            return;
+        }
+
         transform.localScale = originalScale;
         hoverText.gameObject.SetActive(false);
     }
 
     private void OnMouseDown()
     {
-        if (saveState)
+        if (!active)
         {
+            return;
+        }
+
+        CheckId();
+
+        if (loadDialogueBox)
+        {
+            gameObject.SetActive(false);
+            hoverText.gameObject.SetActive(false);
             sceneLoader.ShowDialogueBox(nextScene);
         }
         if (loadSceneOnClick)
@@ -53,5 +77,28 @@ public class MouseHover : MonoBehaviour
             gameObject.SetActive(false);
             hoverText.gameObject.SetActive(false);
         }       
+    }
+
+    private void CheckId()
+    {
+        if (string.IsNullOrEmpty(objectID))
+        {
+            return;
+        }
+        if (GameManager.Instance.objectStates.ContainsKey(objectID))
+        {
+            GameManager.Instance.objectStates[objectID] = true;
+        }
+    }
+
+    public void SetActive(bool b)
+    {
+        active = b;
+
+        if (!b)
+        {
+            transform.localScale = originalScale;
+            hoverText.gameObject.SetActive(false);
+        }
     }
 }

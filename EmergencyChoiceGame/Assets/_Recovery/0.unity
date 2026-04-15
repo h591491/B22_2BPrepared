@@ -1040,7 +1040,10 @@ MonoBehaviour:
   text: "Skru p\xE5 n\xF8dblink"
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!1 &181818677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,7 +3807,10 @@ MonoBehaviour:
   text: "Ta p\xE5 refleksvesten"
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!61 &915725020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4309,7 +4315,10 @@ MonoBehaviour:
   text: "Info: Klikk p\xE5 objekter"
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!58 &1106060163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4455,7 +4464,10 @@ MonoBehaviour:
   text: "G\xE5 ut av bilen"
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 1
+  saveState: 0
   nextScene: 2b_bringFromCar
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!61 &1136806870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6967,7 +6979,10 @@ MonoBehaviour:
   text: "Ring n\xF8detatene"
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!61 &1913931377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7642,7 +7657,10 @@ MonoBehaviour:
   text: "T\xE5 p\xE5 parkeringsbremsen"
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  saveState: 0
   nextScene: 
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!58 &2140491430
 CircleCollider2D:
   m_ObjectHideFlags: 0

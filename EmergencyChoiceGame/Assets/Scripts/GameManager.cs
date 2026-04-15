@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -10,6 +11,14 @@ public class GameManager : MonoBehaviour
     public string lastSavedScene = "intro_animation";
     public bool timerRunning = false;
 
+
+    public Dictionary<string, bool> objectStates = new Dictionary<string, bool>()
+    {
+        { "tlf", false },
+        { "vest", false},
+        { "hazardLight", false },
+        { "triangle", false}
+    };
 
     // scene: 2b_bringFromCar states:
     public HashSet<string> collectedObjects = new HashSet<string>();
@@ -48,15 +57,26 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scenename);
     }
 
+
+
     // scene: 2b_bringFromCar and triangle minigame
     public void SetObjectCollected(string id)
     {
         collectedObjects.Add(id);
     }
 
+    // scene: 2b_bringFromCar and triangle minigame
     public bool IsObjectCollected(string id)
     {
         return collectedObjects.Contains(id);
+    }
+
+
+
+    public bool ChechObjectState(string id)
+    {
+        GameManager.Instance.objectStates.TryGetValue(id, out bool value);
+        return value;
     }
 
 }
