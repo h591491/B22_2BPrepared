@@ -1037,10 +1037,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "Skru p\xE5 n\xF8dblink"
+  text: Turn on the hazard lights
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  loadDialogueBox: 0
   nextScene: 
+  objectID: hazardLight
+  sceneLoader: {fileID: 0}
 --- !u!1 &181818677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,7 +2363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hva gj\xF8r du f\xF8r du g\xE5r ut av bilen?"
+  m_text: What do you do?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2394,7 +2397,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3804,7 +3807,10 @@ MonoBehaviour:
   text: "Ta p\xE5 refleksvesten"
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  loadDialogueBox: 0
   nextScene: 
+  objectID: vest
+  sceneLoader: {fileID: 0}
 --- !u!61 &915725020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4306,10 +4312,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.2
-  text: "Info: Klikk p\xE5 objekter"
+  text: Click on the objects
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  loadDialogueBox: 0
   nextScene: 
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!58 &1106060163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4452,10 +4461,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "G\xE5 ut av bilen"
+  text: Leave the car
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 1
+  loadDialogueBox: 0
   nextScene: 2b_bringFromCar
+  objectID: 
+  sceneLoader: {fileID: 0}
 --- !u!61 &1136806870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5398,6 +5410,53 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1364456888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364456890}
+  - component: {fileID: 1364456889}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1364456889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364456888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec1ec8a0c192db64d9ce0d20d552e70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  timer: 0
+  lastSavedScene: intro_animation
+  timerRunning: 0
+--- !u!4 &1364456890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364456888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.91615, y: -0.38844, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1410069659
 GameObject:
   m_ObjectHideFlags: 0
@@ -6964,10 +7023,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "Ring n\xF8detatene"
+  text: Call emergency services
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  loadDialogueBox: 0
   nextScene: 
+  objectID: tlf
+  sceneLoader: {fileID: 0}
 --- !u!61 &1913931377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7639,10 +7701,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "T\xE5 p\xE5 parkeringsbremsen"
+  text: Apply the parking brake
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
+  loadDialogueBox: 0
   nextScene: 
+  objectID: pbrake
+  sceneLoader: {fileID: 0}
 --- !u!58 &2140491430
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7767,3 +7832,4 @@ SceneRoots:
   - {fileID: 1106060165}
   - {fileID: 1896786337}
   - {fileID: 345094635}
+  - {fileID: 1364456890}
