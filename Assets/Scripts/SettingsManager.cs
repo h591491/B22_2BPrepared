@@ -1,19 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SettingsManager : MonoBehaviour
 {
     public static SettingsManager Instance;
 
-    // ----------------------
-    // SETTINGS DATA
-    // ----------------------
+    [Header("Settings Data")]
     public float masterVolume = 1f;
     public float musicVolume = 1f;
 
-    // ----------------------
-    // UI REFERENCES
-    // ----------------------
+    [Header("UI References (persistent)")]
     public GameObject settingsOverlay;
     public GameObject panel;
     public GameObject backgroundDim;
@@ -25,30 +20,30 @@ public class SettingsManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            LoadSettings();
 
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            if (settingsOverlay != null)
+                DontDestroyOnLoad(settingsOverlay);
         }
         else
         {
             Destroy(gameObject);
         }
+
+        LoadSettings();
     }
 
     void Start()
     {
-        SetupUI();
+        InitializeUI();
     }
 
     void Update()
     {
-        // Animate panel
-        if (settingsOverlay != null && settingsOverlay.activeSelf && panel != null)
+        if (panel != null)
         {
             panel.transform.localScale = Vector3.Lerp(
                 panel.transform.localScale,
@@ -57,53 +52,29 @@ public class SettingsManager : MonoBehaviour
             );
         }
 
-        // ESC toggle
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleSettings();
         }
     }
 
-    // ----------------------
-    // SCENE LOADING HOOK
-    // ----------------------
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    void InitializeUI()
     {
-        SetupUI();
-    }
-
-    void SetupUI()
-    {
-        GameObject overlay = GameObject.Find("SettingsOverlay");
-
-        if (overlay != null)
+        if (panel != null)
         {
-            settingsOverlay = overlay;
-
-            Transform panelTransform = overlay.transform.Find("SettingsPanel");
-            Transform dimTransform = overlay.transform.Find("BackgroundDim");
-
-            if (panelTransform != null)
-                panel = panelTransform.gameObject;
-
-            if (dimTransform != null)
-                backgroundDim = dimTransform.gameObject;
-
-            // Reset UI state
             panel.transform.localScale = Vector3.zero;
             panel.SetActive(false);
-
-            if (backgroundDim != null)
-                backgroundDim.SetActive(false);
-
-            settingsOverlay.SetActive(false);
-            isOpen = false;
         }
+
+        if (backgroundDim != null)
+            backgroundDim.SetActive(false);
+
+        if (settingsOverlay != null)
+            settingsOverlay.SetActive(false);
+
+        isOpen = false;
     }
 
-    // ----------------------
-    // OPEN / CLOSE SETTINGS
-    // ----------------------
     public void OpenSettings()
     {
         if (settingsOverlay == null) return;
@@ -113,8 +84,11 @@ public class SettingsManager : MonoBehaviour
         if (backgroundDim != null)
             backgroundDim.SetActive(true);
 
-        panel.SetActive(true);
-        panel.transform.localScale = Vector3.zero;
+        if (panel != null)
+        {
+            panel.SetActive(true);
+            panel.transform.localScale = Vector3.zero;
+        }
 
         targetScale = Vector3.one;
         isOpen = true;
@@ -136,9 +110,6 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    // ----------------------
-    // TOGGLE (USED BY BUTTON + ESC)
-    // ----------------------
     public void ToggleSettings()
     {
         if (settingsOverlay != null && settingsOverlay.activeSelf)
@@ -147,20 +118,12 @@ public class SettingsManager : MonoBehaviour
             OpenSettings();
     }
 
-    // ----------------------
-    // STATIC ACCESS (KEY PART 🔥)
-    // ----------------------
     public static void Toggle()
     {
         if (Instance != null)
-        {
             Instance.ToggleSettings();
-        }
     }
 
-    // ----------------------
-    // SAVE SYSTEM
-    // ----------------------
     public void SaveSettings()
     {
         PlayerPrefs.SetFloat("MasterVolume", masterVolume);
