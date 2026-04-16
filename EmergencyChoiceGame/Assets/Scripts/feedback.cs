@@ -40,7 +40,13 @@ public class feedback : MonoBehaviour
             
             if (GameManager.Instance.ChechObjectState(id))
             {
-                youDidText += GetFeedback(id, true) + "\n";
+                youDidText += GetFeedback(id, true);
+                if (id.Equals("triangle"))
+                {
+                    youDidText += GetPlacementText();
+                }
+
+                youDidText += "\n";
             }
             else
             {
@@ -92,4 +98,21 @@ public class feedback : MonoBehaviour
             GameManager.Instance.LoadScene(nextscene);
         }
     }
+
+    public string GetPlacementText()
+    {
+        switch (GameManager.Instance.triangleplacement)
+        {
+            case 1:
+                return ", and it was placed correctly";
+            case 2:
+                return ", but the placement was slightly off";
+            case 3:
+                return ", and the placement was incorrect";
+            default:
+                return "";
+
+        }
+    }
+
 }

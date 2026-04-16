@@ -38,14 +38,17 @@ public class minigame : MonoBehaviour
         if (innerZone.OverlapPoint(pos))
         {
             placement = "Perfect";
+            GameManager.Instance.triangleplacement = 1;
         }
         else if (outerZone.OverlapPoint(pos))
         {
             placement = "Close";
+            GameManager.Instance.triangleplacement = 2;
         }
         else
         {
             placement = "Wrong position";
+            GameManager.Instance.triangleplacement = 3;
         }
     }
 
@@ -60,4 +63,6 @@ public class minigame : MonoBehaviour
 
         btn.gameObject.SetActive(true);
     }
+
+
 }

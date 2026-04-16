@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
         { "triangle", false}
     };
 
+    // 1 = perfect. 2 = okay. 3 = wrong.
+    public int triangleplacement = 0;
+
     // scene: 2b_bringFromCar states:
     public HashSet<string> collectedObjects = new HashSet<string>();
 
