@@ -8,6 +8,7 @@ public class dragTriangle : MonoBehaviour
 
     public float scaleMultiplier = 0.7f;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,5 +55,7 @@ public class dragTriangle : MonoBehaviour
         mousePos.z = 10f; // avstand fra kamera
         return Camera.main.ScreenToWorldPoint(mousePos);
     }
+
+    
 
 }
