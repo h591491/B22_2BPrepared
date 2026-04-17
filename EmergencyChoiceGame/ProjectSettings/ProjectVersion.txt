@@ -1,2 +1,8 @@
 m_EditorVersion: 6000.3.6f1
 m_EditorVersionWithRevision: 6000.3.6f1 (bbb010bdb8a3)
+
+--------------
+
+- laget en ny egen tekstfil eller automatisk rensing i kode?
+- hva problem løser oppgaven?
+

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class sceneloader_2b : MonoBehaviour
@@ -8,6 +9,7 @@ public class sceneloader_2b : MonoBehaviour
 
     private string scenename;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,10 +18,24 @@ public class sceneloader_2b : MonoBehaviour
 
         foreach (var obj in objects)
         {
+            bool hide = false;
+
+            // Sjekk collected
             if (GameManager.Instance.IsObjectCollected(obj.objectID))
             {
-                obj.gameObject.SetActive(false);
+                hide = true;
             }
+
+            // Sjekk state
+            if (GameManager.Instance.objectStates.ContainsKey(obj.objectID))
+            {
+                if (GameManager.Instance.ChechObjectState(obj.objectID))
+                {
+                    hide = true;
+                }
+            }
+
+            obj.gameObject.SetActive(!hide);
         }
     }
 
@@ -31,6 +47,8 @@ public class sceneloader_2b : MonoBehaviour
 
     public void ShowDialogueBox(string scenename)
     {
+        SetMouseHoverActive(false);
+
         this.scenename = scenename;
         task.SetActive(false);
         dialogue.SetActive(true);
@@ -38,13 +56,24 @@ public class sceneloader_2b : MonoBehaviour
 
     public void HideDialogueBox()
     {
+        // Velger å ikke plassere trekanten nå:
+        GameManager.Instance.objectStates["triangle"] = false;
+        
+        SetMouseHoverActive(true);
         dialogue.SetActive(false);
         task.SetActive(true);
     }
 
     public void placeTriangleNow()
     {
-        GameManager.Instance.LoadScene("Minigame_warningTriangle");
+        GameManager.Instance.LoadScene(scenename);
     }
 
+    public void SetMouseHoverActive(bool state)
+    {
+        foreach (var obj in objects)
+        {
+            obj.SetActive(state);
+        }
+    }
 }
