@@ -12,35 +12,35 @@ EditorBuildSettings:
     path: Assets/Menus/SceneSelect/SceneSelect.unity
     guid: 2d11d1a4e1ec75141b7bc03c65a025ce
   - enabled: 1
+    path: Assets/Scenes/(1) intro_animation.unity
+    guid: 0dd51953952d01944bbc7d5d9651647c
+  - enabled: 1
     path: Assets/Scenes/stop_options.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/gameover.unity
-    guid: cfb3eb3f9ee4d124bb31ef279bcea9fe
   - enabled: 1
     path: Assets/Scenes/where_to_stop.unity
     guid: 1fa1576c0cabe5d48b46c8e739b8f5f0
   - enabled: 1
-    path: Assets/Scenes/(1) intro_animation.unity
-    guid: 0dd51953952d01944bbc7d5d9651647c
-  - enabled: 1
-    path: Assets/Scenes/test_summary.unity
-    guid: 7a19e0d3e429f6747975f589ea800985
-  - enabled: 1
     path: Assets/Scenes/2a_leavingCar.unity
     guid: c685f6b93b0255e4caa1f2897990ae47
+  - enabled: 1
+    path: Assets/Scenes/2b_bringFromCar.unity
+    guid: 886cbf04a6cbecd4fb2bdcdfb87a7327
+  - enabled: 1
+    path: Assets/Scenes/Minigame_warningTriangle.unity
+    guid: 59babf0c527c8664e8abb71e4e22b44b
   - enabled: 0
     path: Assets/Scenes/2b_bringFromCar2.unity
     guid: b0e3755eaf03bfe408b8bf4f8251a30a
   - enabled: 1
-    path: Assets/Scenes/Minigame_warningTriangle.unity
-    guid: 59babf0c527c8664e8abb71e4e22b44b
-  - enabled: 1
     path: Assets/Scenes/4a_Notify.unity
     guid: f959a64823bb0234bbb776aa196d0832
   - enabled: 1
-    path: Assets/Scenes/2b_bringFromCar.unity
-    guid: 886cbf04a6cbecd4fb2bdcdfb87a7327
+    path: Assets/Scenes/gameover.unity
+    guid: cfb3eb3f9ee4d124bb31ef279bcea9fe
+  - enabled: 1
+    path: Assets/Scenes/test_summary.unity
+    guid: 7a19e0d3e429f6747975f589ea800985
   - enabled: 1
     path: Assets/Scenes/NewScene.unity
     guid: 725082c386000664d8622e6f71dfef6d
