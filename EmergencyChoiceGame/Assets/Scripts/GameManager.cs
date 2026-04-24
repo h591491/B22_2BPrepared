@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,20 +12,11 @@ public class GameManager : MonoBehaviour
     public string lastSavedScene = "intro_animation";
     public bool timerRunning = false;
 
-
-    public Dictionary<string, bool> objectStates = new Dictionary<string, bool>()
-    {
-        { "tlf", false },
-        { "vest", false},
-        { "hazardLight", false },
-        { "triangle", false}
-    };
-
-    // 1 = perfect. 2 = okay. 3 = wrong.
-    public int triangleplacement = 0;
+    public List<GameAction> actions = new List<GameAction>();
 
     // scene: 2b_bringFromCar states:
     public HashSet<string> collectedObjects = new HashSet<string>();
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -76,10 +68,39 @@ public class GameManager : MonoBehaviour
 
 
 
-    public bool ChechObjectState(string id)
+    public bool CheckObjectState(string id)
     {
-        GameManager.Instance.objectStates.TryGetValue(id, out bool value);
-        return value;
+        GameAction ga = actions.Find(a => a.id == id);
+        return ga != null && ga.done;
+    }
+
+    public void CompleteAction(string id)
+    {
+        var a = actions.Find(a => a.id == id);
+
+        if(a == null)
+        {
+            return;
+        }
+
+        a.done = true;
+    }
+
+    public int GetScore()
+    {
+        int score = 0;
+        foreach (GameAction action in actions)
+        {
+            if(action.done){
+                score += action.points;
+            }
+        }
+        return score;
+    }
+
+    public int GetMaxScore()
+    {
+        return actions.Where(a => a.points > 0).Sum(a => a.points);
     }
 
 }

@@ -85,10 +85,7 @@ public class MouseHover : MonoBehaviour
         {
             return;
         }
-        if (GameManager.Instance.objectStates.ContainsKey(objectID))
-        {
-            GameManager.Instance.objectStates[objectID] = true;
-        }
+        GameManager.Instance.CompleteAction(objectID);
     }
 
     public void SetActive(bool b)
