@@ -27,12 +27,9 @@ public class sceneloader_2b : MonoBehaviour
             }
 
             // Sjekk state
-            if (GameManager.Instance.objectStates.ContainsKey(obj.objectID))
+            if (GameManager.Instance.CheckObjectState(obj.objectID))
             {
-                if (GameManager.Instance.ChechObjectState(obj.objectID))
-                {
-                    hide = true;
-                }
+                hide = true;
             }
 
             obj.gameObject.SetActive(!hide);
@@ -57,7 +54,8 @@ public class sceneloader_2b : MonoBehaviour
     public void HideDialogueBox()
     {
         // Velger å ikke plassere trekanten nå:
-        GameManager.Instance.objectStates["triangle"] = false;
+        var ta = GameManager.Instance.actions.Find(a => a.id == "triangle");
+        ta.done = false;
         
         SetMouseHoverActive(true);
         dialogue.SetActive(false);

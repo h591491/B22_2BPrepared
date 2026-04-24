@@ -17,6 +17,8 @@ public class minigame : MonoBehaviour
 
     public Button btn;
 
+    private GameAction action = GameManager.Instance.actions.Find(a => a.id == "triangle");
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,17 +40,17 @@ public class minigame : MonoBehaviour
         if (innerZone.OverlapPoint(pos))
         {
             placement = "Perfect";
-            GameManager.Instance.triangleplacement = 1;
+            action.doneText += ", and it was placed correctly";
         }
         else if (outerZone.OverlapPoint(pos))
         {
             placement = "Close";
-            GameManager.Instance.triangleplacement = 2;
+            action.doneText += ", but the placement was slightly off";
         }
         else
         {
             placement = "Wrong position";
-            GameManager.Instance.triangleplacement = 3;
+            action.doneText += ", and the placement was incorrect";
         }
     }
 

@@ -5886,6 +5886,42 @@ MonoBehaviour:
   timer: 0
   lastSavedScene: intro_animation
   timerRunning: 0
+  actions:
+  - id: tlf
+    done: 0
+    doneText: You called emergency services
+    notDoneText: You did not call emergency services
+    points: 10
+  - id: vest
+    done: 0
+    doneText: You put on a high-visibility vest
+    notDoneText: You did not call emergency services
+    points: 10
+  - id: hazardLight
+    done: 0
+    doneText: You turned on the hazard lights
+    notDoneText: You did not turn on the hazard lights
+    points: 10
+  - id: triangle
+    done: 0
+    doneText: You placed the warning triangle
+    notDoneText: You did not place a warning triangle
+    points: 10
+  - id: coffee
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: -10
+  - id: jacket
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: -10
+  - id: firstAidKit
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: 5
 --- !u!4 &1700543757
 Transform:
   m_ObjectHideFlags: 0

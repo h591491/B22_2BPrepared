@@ -13,53 +13,29 @@ public class feedback : MonoBehaviour
     public string nextscene = "";
     public string nextsceneElse = "";
 
-    // When it is done
-    private Dictionary<string, string> feedbackDone = new Dictionary<string, string>()
-    {
-        { "tlf", "You called emergency services" },
-        { "vest", "You put on a high-visibility vest"},
-        { "hazardLight", "You turned on the hazard lights"},
-        { "triangle", "You placed the warning triangle" }
-    };
-
-    // When it is not done
-    private Dictionary<string, string> feedbackNotDone = new Dictionary<string, string>()
-    {
-        { "tlf", "You did not call emergency services" },
-        { "vest", "You did not put on a high-visibility vest" },
-        { "hazardLight", "You did not turn on the hazard lights" },
-        { "triangle", "You did not place a warning triangle" }
-    };
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach(string id in GameManager.Instance.objectStates.Keys)
+        foreach(GameAction action in GameManager.Instance.actions)
         {
             
-            if (GameManager.Instance.ChechObjectState(id))
+            if (action.done && action.doneText != "") 
             {
-                youDidText += GetFeedback(id, true);
-                if (id.Equals("triangle"))
-                {
-                    youDidText += GetPlacementText();
-                }
-
-                youDidText += "\n";
+                youDidText += action.doneText + "\n";
             }
             else
             {
-                youDidNotText += GetFeedback(id, false) + "\n";
+                if (action.notDoneText != "")
+                {
+                    youDidNotText += action.notDoneText + "\n";
+                }
             }
 
         }
 
         summary = WriteSummary();
-        
         summaryTextBox.text = summary;
-        
-
     }
 
     // Update is called once per frame
@@ -68,28 +44,23 @@ public class feedback : MonoBehaviour
         
     }
 
-    public string GetFeedback(string id, bool done)
-    {
-        var dict = done ? feedbackDone : feedbackNotDone;
-
-        if (dict.TryGetValue(id, out string text))
-            return text;
-
-        return "";
-    }
-
+  
     public string WriteSummary()
     {
+        int score = GameManager.Instance.GetScore();
+        int maxScore = GameManager.Instance.GetMaxScore();
+
         return
         $"<size=120%><b>What you did:</b></size>\n" +
-        $"{youDidText}\n\n" +
+        $"{youDidText}\n" +
         $"<size=120%><b>What you missed:</b></size>\n" +
-        $"{youDidNotText}";
+        $"{youDidNotText}\n" + 
+        $"<size=120%><b>Score: {score} / {maxScore}</b></size>";
     }
 
     public void OnContinuePressed()
     {
-        if (GameManager.Instance.ChechObjectState("tlf"))
+        if (GameManager.Instance.CheckObjectState("tlf"))
         {
             GameManager.Instance.LoadScene(nextsceneElse);
         }
@@ -98,21 +69,4 @@ public class feedback : MonoBehaviour
             GameManager.Instance.LoadScene(nextscene);
         }
     }
-
-    public string GetPlacementText()
-    {
-        switch (GameManager.Instance.triangleplacement)
-        {
-            case 1:
-                return ", and it was placed correctly";
-            case 2:
-                return ", but the placement was slightly off";
-            case 3:
-                return ", and the placement was incorrect";
-            default:
-                return "";
-
-        }
-    }
-
 }
