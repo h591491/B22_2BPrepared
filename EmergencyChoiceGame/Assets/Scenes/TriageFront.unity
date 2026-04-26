@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d28604ac0d6e704f86cfd09ff3f5de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIHoverText
-  textToShow: Passenger 1
+  textToShow: Screaming and holding their shoulder, breathing normally
   hoverText: {fileID: 1765909935}
 --- !u!1 &472553360
 GameObject:
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d28604ac0d6e704f86cfd09ff3f5de1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIHoverText
-  textToShow: Passenger 2
+  textToShow: Holds their stomach, is pale and responds briefly
   hoverText: {fileID: 1765909935}
 --- !u!114 &1619162344
 MonoBehaviour:
