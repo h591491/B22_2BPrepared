@@ -44,6 +44,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewScene.unity
     guid: 725082c386000664d8622e6f71dfef6d
+  - enabled: 1
+    path: Assets/Scenes/TriageFront.unity
+    guid: 87884e5fee3a6af459d3d9a125f2cf79
+  - enabled: 1
+    path: Assets/Scenes/TriageBack.unity
+    guid: 1a16f425201b2e3468874bb24b6fb9af
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
