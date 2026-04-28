@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 104590175}
   - component: {fileID: 104590174}
   m_Layer: 5
-  m_Name: Backgorund
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3895,7 +3895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
   scaleMultiplier: 1.4
-  text: "Ta p\xE5 refleksvesten"
+  text: Put on reflective vest
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 0
   loadDialogueBox: 0
@@ -5534,7 +5534,6 @@ MonoBehaviour:
   lastCheckpoint: intro_animation
   timerRunning: 0
   actions: []
-  lastScene: 
 --- !u!4 &1364456890
 Transform:
   m_ObjectHideFlags: 0
