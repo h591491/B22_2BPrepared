@@ -19,4 +19,9 @@ public class Buttons : MonoBehaviour
     {
         GameManager.Instance.LoadScene(sceneName);
     }
+
+    public void LoadLastScene()
+    {
+        GameManager.Instance.LoadScene(GameManager.Instance.lastScene);
+    }
 }

@@ -72,8 +72,6 @@ public class MouseHover : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.SetObjectCollected(objectID);
-
             gameObject.SetActive(false);
             hoverText.gameObject.SetActive(false);
         }       

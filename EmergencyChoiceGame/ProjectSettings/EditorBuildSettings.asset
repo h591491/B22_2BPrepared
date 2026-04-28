@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/test_summary.unity
     guid: 7a19e0d3e429f6747975f589ea800985
   - enabled: 1
-    path: Assets/Scenes/NewScene.unity
+    path: Assets/Scenes/emergency_call.unity
     guid: 725082c386000664d8622e6f71dfef6d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

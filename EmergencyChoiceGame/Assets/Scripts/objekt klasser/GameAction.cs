@@ -8,6 +8,7 @@ public class GameAction
     public string doneText;
     public string notDoneText;
     public int points;
+    public int penalty;
 
     public string GetFeedback()
     {

@@ -5884,7 +5884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   timer: 0
-  lastSavedScene: intro_animation
+  lastCheckpoint: intro_animation
   timerRunning: 0
   actions:
   - id: tlf
@@ -5906,7 +5906,7 @@ MonoBehaviour:
     done: 0
     doneText: You placed the warning triangle
     notDoneText: You did not place a warning triangle
-    points: 10
+    points: 30
   - id: coffee
     done: 0
     doneText: 
@@ -5922,6 +5922,17 @@ MonoBehaviour:
     doneText: 
     notDoneText: 
     points: 5
+  - id: extinguisher
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: 0
+  - id: pbrake
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: 0
+  lastScene: 
 --- !u!4 &1700543757
 Transform:
   m_ObjectHideFlags: 0
