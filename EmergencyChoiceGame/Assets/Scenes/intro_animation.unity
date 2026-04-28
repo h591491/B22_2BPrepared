@@ -2699,7 +2699,6 @@ GameObject:
   - component: {fileID: 724885274}
   - component: {fileID: 724885277}
   - component: {fileID: 724885276}
-  - component: {fileID: 724885275}
   m_Layer: 0
   m_Name: "d\xF8rh\xE5ndtak_0"
   m_TagString: Untagged
@@ -2722,26 +2721,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 136563228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 24}
---- !u!114 &724885275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724885273}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bd2469994879b94199fccec3394282c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseHover
-  scaleMultiplier: 1.4
-  text: Leave the car
-  hoverText: {fileID: 0}
-  loadSceneOnClick: 1
-  loadDialogueBox: 0
-  nextScene: 2b_bringFromCar
-  objectID: 
-  sceneLoader: {fileID: 0}
 --- !u!61 &724885276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4800,7 +4779,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1286722338}
   - component: {fileID: 1286722340}
-  - component: {fileID: 1286722339}
   m_Layer: 0
   m_Name: Refleksvest
   m_TagString: Untagged
@@ -4824,26 +4802,6 @@ Transform:
   - {fileID: 1037151095}
   m_Father: {fileID: 136563228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 24}
---- !u!114 &1286722339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286722337}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bd2469994879b94199fccec3394282c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseHover
-  scaleMultiplier: 1.4
-  text: "Ta p\xE5 refleksvesten"
-  hoverText: {fileID: 0}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
-  objectID: vest
-  sceneLoader: {fileID: 0}
 --- !u!61 &1286722340
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5226,7 +5184,6 @@ GameObject:
   - component: {fileID: 1520793220}
   - component: {fileID: 1520793223}
   - component: {fileID: 1520793222}
-  - component: {fileID: 1520793221}
   m_Layer: 0
   m_Name: handbreak_0
   m_TagString: Untagged
@@ -5249,26 +5206,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 136563228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1520793221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520793219}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bd2469994879b94199fccec3394282c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseHover
-  scaleMultiplier: 1.4
-  text: Apply the parking brake
-  hoverText: {fileID: 0}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
-  objectID: pbrake
-  sceneLoader: {fileID: 0}
 --- !u!58 &1520793222
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5870,7 +5807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1700543756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5892,46 +5829,55 @@ MonoBehaviour:
     doneText: You called emergency services
     notDoneText: You did not call emergency services
     points: 10
+    penalty: 0
   - id: vest
     done: 0
     doneText: You put on a high-visibility vest
     notDoneText: You did not call emergency services
     points: 10
+    penalty: 0
   - id: hazardLight
     done: 0
     doneText: You turned on the hazard lights
     notDoneText: You did not turn on the hazard lights
     points: 10
+    penalty: 0
   - id: triangle
     done: 0
     doneText: You placed the warning triangle
     notDoneText: You did not place a warning triangle
     points: 30
+    penalty: 0
   - id: coffee
     done: 0
     doneText: 
     notDoneText: 
     points: -10
+    penalty: 0
   - id: jacket
     done: 0
     doneText: 
     notDoneText: 
     points: -10
+    penalty: 0
   - id: firstAidKit
     done: 0
     doneText: 
     notDoneText: 
     points: 5
+    penalty: 0
   - id: extinguisher
     done: 0
     doneText: 
     notDoneText: 
     points: 0
+    penalty: 0
   - id: pbrake
     done: 0
     doneText: 
     notDoneText: 
     points: 0
+    penalty: 0
   lastScene: 
 --- !u!4 &1700543757
 Transform:
@@ -6967,7 +6913,6 @@ GameObject:
   - component: {fileID: 2021022775}
   - component: {fileID: 2021022778}
   - component: {fileID: 2021022777}
-  - component: {fileID: 2021022776}
   m_Layer: 0
   m_Name: Emergency singal button_0
   m_TagString: Untagged
@@ -6990,26 +6935,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 136563228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2021022776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021022774}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bd2469994879b94199fccec3394282c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseHover
-  scaleMultiplier: 1.4
-  text: Turn on the hazard lights
-  hoverText: {fileID: 0}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
-  objectID: hazardLight
-  sceneLoader: {fileID: 0}
 --- !u!58 &2021022777
 CircleCollider2D:
   m_ObjectHideFlags: 0
