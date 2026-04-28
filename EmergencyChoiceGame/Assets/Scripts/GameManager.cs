@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Serialization;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,19 +10,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float timer = 0f;
-    public string lastSavedScene = "intro_animation";
+    public string lastCheckpoint = "intro_animation";
     public bool timerRunning = false;
 
     public List<GameAction> actions = new List<GameAction>();
 
-    // scene: 2b_bringFromCar states:
-    public HashSet<string> collectedObjects = new HashSet<string>();
+    public string lastScene;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -39,33 +40,33 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        
+
     }
+
+    public void Restart()
+    {
+        timer = 0f;
+        lastCheckpoint = "intro_animation";
+        timerRunning = false;
+
+        foreach(var a in actions){
+            a.done = false;
+            a.penalty = 0;
+        }
+        lastScene = "";
+     }
+
 
     public void SaveCheckpoint()
     {
-        lastSavedScene = SceneManager.GetActiveScene().name;
+        lastCheckpoint = SceneManager.GetActiveScene().name;
     }
 
     public void LoadScene(string scenename)
     {
+        lastScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(scenename);
     }
-
-
-
-    // scene: 2b_bringFromCar and triangle minigame
-    public void SetObjectCollected(string id)
-    {
-        collectedObjects.Add(id);
-    }
-
-    // scene: 2b_bringFromCar and triangle minigame
-    public bool IsObjectCollected(string id)
-    {
-        return collectedObjects.Contains(id);
-    }
-
 
 
     public bool CheckObjectState(string id)
@@ -89,10 +90,11 @@ public class GameManager : MonoBehaviour
     public int GetScore()
     {
         int score = 0;
+
         foreach (GameAction action in actions)
         {
             if(action.done){
-                score += action.points;
+                score += action.points + action.penalty;
             }
         }
         return score;

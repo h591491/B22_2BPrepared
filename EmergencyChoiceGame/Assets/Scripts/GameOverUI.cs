@@ -21,17 +21,13 @@ public class GameOverUI : MonoBehaviour
 
     public void LoadCheckpointScene()
     {
-        string lastSavedScene = GameManager.Instance.lastSavedScene;
+        string lastSavedScene = GameManager.Instance.lastCheckpoint;
         SceneManager.LoadScene(lastSavedScene);
     }
 
     public void LoadStartScene()
     {
-
-        GameManager.Instance.timerRunning = false;
-        GameManager.Instance.timer = 0f;
-        GameManager.Instance.lastSavedScene = "intro_animation";
-
+        GameManager.Instance.Restart();
         SceneManager.LoadScene("intro_animation");
     }
 

@@ -17,13 +17,15 @@ public class minigame : MonoBehaviour
 
     public Button btn;
 
-    private GameAction action = GameManager.Instance.actions.Find(a => a.id == "triangle");
+    private GameAction action;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         feedback.gameObject.SetActive(false);
         btn.gameObject.SetActive(false);
+
+        action = GameManager.Instance.actions.Find(a => a.id == "triangle");
     }
 
     // Update is called once per frame
@@ -45,12 +47,14 @@ public class minigame : MonoBehaviour
         else if (outerZone.OverlapPoint(pos))
         {
             placement = "Close";
+            action.penalty = -20;
             action.doneText += ", but the placement was slightly off";
         }
         else
         {
             placement = "Wrong position";
-            action.doneText += ", and the placement was incorrect";
+            action.penalty = -20;
+            action.doneText += ", but the placement was incorrect";
         }
     }
 

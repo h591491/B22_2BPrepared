@@ -20,12 +20,6 @@ public class sceneloader_2b : MonoBehaviour
         {
             bool hide = false;
 
-            // Sjekk collected
-            if (GameManager.Instance.IsObjectCollected(obj.objectID))
-            {
-                hide = true;
-            }
-
             // Sjekk state
             if (GameManager.Instance.CheckObjectState(obj.objectID))
             {
