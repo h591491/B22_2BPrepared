@@ -79,7 +79,7 @@ public class emergency_call : MonoBehaviour
                 questionText = "Are there any injured?",
                 options = new Option[]
                 {
-                    new Option { text = "Yes", score = -2 },
+                    new Option { text = "Yes", score = 0 },
                     new Option { text = "No", score = 0 },
                     new Option { text = "I don't know", score = 0 }
                 }
@@ -127,6 +127,11 @@ public class emergency_call : MonoBehaviour
 
     public void ShowOption(int opt)
     {
+        if (questions[count].options == null)
+        {
+            return;
+        }
+
         txtA.text = questions[count].options[opt - 1].text;
         this.opt = opt;
     }
@@ -146,7 +151,7 @@ public class emergency_call : MonoBehaviour
 
         txtTotPoints.text = $"Points: {totPoint}";
         if(point > 0) txtPoints.text = $"+{point}";
-        txtPoints.text = point.ToString();
+        else txtPoints.text = point.ToString();
         opt = 0;
     }
 

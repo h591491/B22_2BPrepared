@@ -7304,7 +7304,7 @@ MonoBehaviour:
   hoverText: {fileID: 1864095297}
   loadSceneOnClick: 1
   loadDialogueBox: 0
-  nextScene: emergency_call
+  nextScene: 4b_emergency_call
   objectID: tlf
   sceneLoader: {fileID: 0}
 --- !u!61 &1913931377

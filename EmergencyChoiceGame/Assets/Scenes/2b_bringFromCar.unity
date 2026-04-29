@@ -1252,7 +1252,7 @@ MonoBehaviour:
   hoverText: {fileID: 1863553454}
   loadSceneOnClick: 1
   loadDialogueBox: 0
-  nextScene: emergency_call
+  nextScene: 4b_emergency_call
   objectID: tlf
   sceneLoader: {fileID: 0}
 --- !u!61 &874038810
@@ -2570,7 +2570,7 @@ MonoBehaviour:
   hoverText: {fileID: 1863553454}
   loadSceneOnClick: 1
   loadDialogueBox: 0
-  nextScene: test_summary
+  nextScene: first_summary
   objectID: 
   sceneLoader: {fileID: 0}
 --- !u!61 &1897579079
