@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 public class GameOverUI : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
+    private float finalTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        float finalTime = GameManager.Instance.timer;
+        finalTime = GameManager.Instance.finaltime;
         timerText.text = "Time: " + finalTime.ToString("F2") + " seconds";
-        
     }
 
     // Update is called once per frame
@@ -18,17 +18,4 @@ public class GameOverUI : MonoBehaviour
     {
         
     }
-
-    public void LoadCheckpointScene()
-    {
-        string lastSavedScene = GameManager.Instance.lastCheckpoint;
-        SceneManager.LoadScene(lastSavedScene);
-    }
-
-    public void LoadStartScene()
-    {
-        GameManager.Instance.Restart();
-        SceneManager.LoadScene("intro_animation");
-    }
-
 }

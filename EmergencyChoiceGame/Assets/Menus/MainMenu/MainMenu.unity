@@ -732,8 +732,8 @@ MonoBehaviour:
     done: 0
     doneText: You called emergency services
     notDoneText: You did not call emergency services
-    points: 10
-    penalty: 0
+    points: 20
+    penalty: -10
   - id: vest
     done: 0
     doneText: You put on a high-visibility vest
@@ -783,6 +783,7 @@ MonoBehaviour:
     points: 0
     penalty: 0
   lastScene: 
+  currentScene: 
 --- !u!4 &403791932
 Transform:
   m_ObjectHideFlags: 0

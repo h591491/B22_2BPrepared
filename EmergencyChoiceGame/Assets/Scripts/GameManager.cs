@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public string lastScene;
     public string currentScene;
+    public float finaltime;
 
 
 
@@ -46,15 +47,8 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        timer = 0f;
-        lastCheckpoint = "intro_animation";
-        timerRunning = false;
-
-        foreach(var a in actions){
-            a.done = false;
-            a.penalty = 0;
-        }
-        lastScene = "";
+        ResetGameState();
+        LoadScene("intro_animation");
      }
 
 
@@ -76,6 +70,20 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(lastScene);
     }
 
+    public void GoToMainMenu()
+    {
+        ResetGameState();
+        LoadScene("MainMenu");
+    }
+
+    public void GameOver()
+    {
+        float finalTime = timer;
+        timerRunning = false;
+
+        LoadScene("gameover");
+    }
+
     public void SpescialSceneLoad()
     {
         switch (currentScene)
@@ -91,6 +99,11 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case "first_summary":
+                if(lastScene == "gameover")
+                {
+                    LoadScene("gameover");
+                    break;
+                }
                 if (GameManager.Instance.CheckObjectState("tlf"))
                 {
                     LoadScene("New Scene");
@@ -100,6 +113,8 @@ public class GameManager : MonoBehaviour
                     LoadScene("4a_Notify");
                 }
                 break;
+            
+                
         }
 
         
@@ -142,6 +157,21 @@ public class GameManager : MonoBehaviour
     public int GetMaxScore()
     {
         return actions.Where(a => a.points > 0).Sum(a => a.points);
+    }
+
+    public void ResetGameState()
+    {
+        timer = 0f;
+        lastCheckpoint = "intro_animation";
+        timerRunning = false;
+
+        foreach (var a in actions)
+        {
+            a.done = false;
+            a.penalty = 0;
+        }
+
+        lastScene = "";
     }
 
 }

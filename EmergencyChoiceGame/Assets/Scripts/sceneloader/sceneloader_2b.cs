@@ -13,6 +13,8 @@ public class sceneloader_2b : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.Instance.SaveCheckpoint();
+
         dialogue.SetActive(false);
         task.SetActive(true);
 
