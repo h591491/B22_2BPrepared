@@ -150,7 +150,7 @@ public class emergency_call : MonoBehaviour
         ShowText();
 
         txtTotPoints.text = $"Points: {totPoint}";
-        if(point > 0) txtPoints.text = $"+{point}";
+        if(point >= 0) txtPoints.text = $"+{point}";
         else txtPoints.text = point.ToString();
         opt = 0;
     }
