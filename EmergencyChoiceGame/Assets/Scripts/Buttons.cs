@@ -14,6 +14,19 @@ public class Buttons : MonoBehaviour
     {
         
     }
+    public void Restart()
+    {
+        GameManager.Instance.Restart();
+    }
+
+    public void Gameover()
+    {
+        GameManager.Instance.GameOver();
+    }
+    public void GoToMainMenu()
+    {
+        GameManager.Instance.GoToMainMenu();
+    }
 
     public void LoadScene(string sceneName)
     {
