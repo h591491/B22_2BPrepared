@@ -7,17 +7,17 @@ public class feedback : MonoBehaviour
     private string youDidText = "";
     private string youDidNotText = "";
     private string summary = "";
+    private string youDidHeader = "<size=120%><b>What you did:</b></size>\n";
+    private string youDidNotHeader = "<size=120%><b>What you missed:</b></size>\n";
 
     public TMP_Text summaryTextBox;
-
-    public string nextscene = "";
-    public string nextsceneElse = "";
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach(GameAction action in GameManager.Instance.actions)
+        
+        foreach (GameAction action in GameManager.Instance.actions)
         {
             
             if (action.done && action.doneText != "") 
@@ -47,26 +47,26 @@ public class feedback : MonoBehaviour
   
     public string WriteSummary()
     {
-        int score = GameManager.Instance.GetScore();
-        int maxScore = GameManager.Instance.GetMaxScore();
-
-        return
-        $"<size=120%><b>What you did:</b></size>\n" +
-        $"{youDidText}\n" +
-        $"<size=120%><b>What you missed:</b></size>\n" +
-        $"{youDidNotText}\n" + 
-        $"<size=120%><b>Score: {score} / {maxScore}</b></size>";
-    }
-
-    public void OnContinuePressed()
-    {
-        if (GameManager.Instance.CheckObjectState("tlf"))
+        string scoretext = WriteScore();
+        
+        if(youDidText == "")
         {
-            GameManager.Instance.LoadScene(nextsceneElse);
+            return youDidNotHeader + youDidNotText + scoretext;
+        }
+        else if(youDidNotText == "")
+        {
+            return youDidHeader + youDidText + scoretext;
         }
         else
         {
-            GameManager.Instance.LoadScene(nextscene);
+            return youDidHeader + youDidText + "\n" + youDidNotHeader + youDidNotText + scoretext;
         }
+    }
+
+    public string WriteScore()
+    {
+        int score = GameManager.Instance.GetScore();
+        int maxScore = GameManager.Instance.GetMaxScore();
+        return $"\n<size=120%><b>Score: {score} / {maxScore}</b></size>";
     }
 }

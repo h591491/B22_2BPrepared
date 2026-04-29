@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public List<GameAction> actions = new List<GameAction>();
 
     public string lastScene;
+    public string currentScene;
 
 
 
@@ -65,8 +66,46 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string scenename)
     {
         lastScene = SceneManager.GetActiveScene().name;
+        currentScene = scenename;
         SceneManager.LoadScene(scenename);
     }
+
+    public void LoadLastScene()
+    {
+        currentScene = lastScene;
+        SceneManager.LoadScene(lastScene);
+    }
+
+    public void SpescialSceneLoad()
+    {
+        switch (currentScene)
+        {
+            case "4b_emergency_call":
+                if(lastScene == "4a_Notify")
+                {
+                    LoadScene("New Scene");
+                }
+                else
+                {
+                    LoadLastScene();
+                }
+                break;
+            case "first_summary":
+                if (GameManager.Instance.CheckObjectState("tlf"))
+                {
+                    LoadScene("New Scene");
+                }
+                else
+                {
+                    LoadScene("4a_Notify");
+                }
+                break;
+        }
+
+        
+    }
+
+
 
 
     public bool CheckObjectState(string id)

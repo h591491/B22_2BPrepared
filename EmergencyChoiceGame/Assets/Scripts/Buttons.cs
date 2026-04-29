@@ -22,6 +22,11 @@ public class Buttons : MonoBehaviour
 
     public void LoadLastScene()
     {
-        GameManager.Instance.LoadScene(GameManager.Instance.lastScene);
+        GameManager.Instance.LoadLastScene();
+    }
+
+    public void SpescialSceneLoad()
+    {
+        GameManager.Instance.SpescialSceneLoad();
     }
 }
