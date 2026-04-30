@@ -7,6 +7,8 @@ public class sceneloader_2a : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.Instance.SaveCheckpoint();
+
         foreach (var obj in objects)
         {
             bool hide = false;

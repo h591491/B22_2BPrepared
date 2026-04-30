@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [System.Serializable]
@@ -13,6 +14,20 @@ public class GameAction
     public string GetFeedback()
     {
         return done ? doneText : notDoneText;
+    }
+
+    public GameAction clone()
+    {
+        return new GameAction
+        {
+            id = this.id,
+            done = this.done,
+            doneText = this.doneText,
+            notDoneText = this.notDoneText,
+            points = this.points, 
+            penalty = this.penalty
+        };
+
     }
 
     

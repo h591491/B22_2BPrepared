@@ -10,14 +10,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float timer = 0f;
-    public string lastCheckpoint = "intro_animation";
+    public Checkpoint lastCheckpoint = new Checkpoint() { sceneName = "intro_animation" };
     public bool timerRunning = false;
 
     public List<GameAction> actions = new List<GameAction>();
 
     public string lastScene;
     public string currentScene;
-    public float finaltime;
 
 
 
@@ -54,7 +53,8 @@ public class GameManager : MonoBehaviour
 
     public void SaveCheckpoint()
     {
-        lastCheckpoint = SceneManager.GetActiveScene().name;
+        lastCheckpoint.sceneName = SceneManager.GetActiveScene().name;
+        lastCheckpoint.actions = actions.Select(a => a.clone()).ToList();
     }
 
     public void LoadScene(string scenename)
@@ -78,10 +78,15 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        float finalTime = timer;
         timerRunning = false;
-
         LoadScene("gameover");
+    }
+
+    public void LoadCheckpoint()
+    {
+        actions = lastCheckpoint.actions.Select(a => a.clone()).ToList();
+        timerRunning = true;
+        SceneManager.LoadScene(lastCheckpoint.sceneName);
     }
 
     public void SpescialSceneLoad()
@@ -162,7 +167,7 @@ public class GameManager : MonoBehaviour
     public void ResetGameState()
     {
         timer = 0f;
-        lastCheckpoint = "intro_animation";
+        lastCheckpoint.sceneName = "intro_animation";
         timerRunning = false;
 
         foreach (var a in actions)
