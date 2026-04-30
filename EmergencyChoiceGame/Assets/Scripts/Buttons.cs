@@ -28,6 +28,11 @@ public class Buttons : MonoBehaviour
         GameManager.Instance.GoToMainMenu();
     }
 
+    public void StartFromCheckpoint()
+    {
+        GameManager.Instance.LoadCheckpoint();
+    }
+
     public void LoadScene(string sceneName)
     {
         GameManager.Instance.LoadScene(sceneName);
