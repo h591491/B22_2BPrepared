@@ -14,13 +14,13 @@ public class GameManager : MonoBehaviour
     public bool timerRunning = false;
 
     public List<GameAction> actions = new List<GameAction>();
-
     public string lastScene;
     public string currentScene;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Awake()
     {
         if (Instance == null)
@@ -33,8 +33,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 
     // Update is called once per frame
+    
     void Update()
     {
         if (timerRunning)
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    
 
     public void Restart()
     {
@@ -50,13 +53,14 @@ public class GameManager : MonoBehaviour
         LoadScene("intro_animation");
      }
 
-
+    
     public void SaveCheckpoint()
     {
         lastCheckpoint.sceneName = SceneManager.GetActiveScene().name;
         lastCheckpoint.actions = actions.Select(a => a.clone()).ToList();
     }
 
+    
     public void LoadScene(string scenename)
     {
         lastScene = SceneManager.GetActiveScene().name;
@@ -81,7 +85,7 @@ public class GameManager : MonoBehaviour
         timerRunning = false;
         LoadScene("gameover");
     }
-
+    
     public void LoadCheckpoint()
     {
         actions = lastCheckpoint.actions.Select(a => a.clone()).ToList();
@@ -127,13 +131,14 @@ public class GameManager : MonoBehaviour
 
 
 
-
+    
     public bool CheckObjectState(string id)
     {
         GameAction ga = actions.Find(a => a.id == id);
         return ga != null && ga.done;
     }
 
+    
     public void CompleteAction(string id)
     {
         var a = actions.Find(a => a.id == id);
@@ -146,6 +151,7 @@ public class GameManager : MonoBehaviour
         a.done = true;
     }
 
+    
     public int GetScore()
     {
         int score = 0;
@@ -159,11 +165,12 @@ public class GameManager : MonoBehaviour
         return score;
     }
 
+    
     public int GetMaxScore()
     {
         return actions.Where(a => a.points > 0).Sum(a => a.points);
     }
-
+    
     public void ResetGameState()
     {
         timer = 0f;

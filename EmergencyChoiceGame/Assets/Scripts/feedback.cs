@@ -10,14 +10,17 @@ public class feedback : MonoBehaviour
     private string youDidHeader = "<size=120%><b>What you did:</b></size>\n";
     private string youDidNotHeader = "<size=120%><b>What you missed:</b></size>\n";
 
+    private GameState state;
+
     public TMP_Text summaryTextBox;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-        foreach (GameAction action in GameManager.Instance.actions)
+        state = GameRoot.Instance.GetComponent<GameState>();
+
+        foreach (GameAction action in state.actions)
         {
             
             if (action.done && action.doneText != "") 
@@ -65,8 +68,8 @@ public class feedback : MonoBehaviour
 
     public string WriteScore()
     {
-        int score = GameManager.Instance.GetScore();
-        int maxScore = GameManager.Instance.GetMaxScore();
+        int score = state.GetScore();
+        int maxScore = state.GetMaxScore();
         return $"\n<size=120%><b>Score: {score} / {maxScore}</b></size>";
     }
 }
