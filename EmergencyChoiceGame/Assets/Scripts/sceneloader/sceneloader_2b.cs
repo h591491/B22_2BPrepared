@@ -9,10 +9,19 @@ public class sceneloader_2b : MonoBehaviour
 
     private string scenename;
 
+    private SceneController sceneController;
+    private GameState state;
+    private CheckpointManager chmanager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        sceneController = GameRoot.Instance.GetComponent<SceneController>();
+        state = GameRoot.Instance.GetComponent<GameState>();
+        chmanager = GameRoot.Instance.GetComponent<CheckpointManager>();
+
+        //chmanager.SaveCheckpoint();
+
         dialogue.SetActive(false);
         task.SetActive(true);
 
@@ -21,7 +30,7 @@ public class sceneloader_2b : MonoBehaviour
             bool hide = false;
 
             // Sjekk state
-            if (GameManager.Instance.CheckObjectState(obj.objectID))
+            if (state.CheckObjectState(obj.objectID))
             {
                 hide = true;
             }
@@ -48,7 +57,7 @@ public class sceneloader_2b : MonoBehaviour
     public void HideDialogueBox()
     {
         // Velger å ikke plassere trekanten nå:
-        var ta = GameManager.Instance.actions.Find(a => a.id == "triangle");
+        var ta = state.actions.Find(a => a.id == "triangle");
         ta.done = false;
         
         SetMouseHoverActive(true);
@@ -58,7 +67,7 @@ public class sceneloader_2b : MonoBehaviour
 
     public void placeTriangleNow()
     {
-        GameManager.Instance.LoadScene(scenename);
+        sceneController.LoadScene(scenename);
     }
 
     public void SetMouseHoverActive(bool state)

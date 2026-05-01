@@ -4,17 +4,24 @@ public class sceneloader_2a : MonoBehaviour
 {
     public MouseHover[] objects;
 
+    private CheckpointManager chmanager;
+    private GameState state;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameManager.Instance.SaveCheckpoint();
+        chmanager = GameRoot.Instance.GetComponent<CheckpointManager>();
+        state = GameRoot.Instance.GetComponent<GameState>();
+
+        // For testing
+        chmanager.SaveCheckpoint();
 
         foreach (var obj in objects)
         {
             bool hide = false;
 
             // Sjekk state
-            if (GameManager.Instance.CheckObjectState(obj.objectID))
+            if (state.CheckObjectState(obj.objectID))
             {
                 hide = true;
             }

@@ -119,148 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1972024
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1972025}
-  - component: {fileID: 1972029}
-  - component: {fileID: 1972028}
-  - component: {fileID: 1972027}
-  - component: {fileID: 1972026}
-  m_Layer: 0
-  m_Name: GameRoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1972025
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972024}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1270.6001, y: 529.8628, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1972026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c89525b9abf62d747b9b29c3855d437f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CheckpointManager
---- !u!114 &1972027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abbb1824a9b253468bdc7d8f1b060f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneController
-  lastScene: 
-  currentScene: 
---- !u!114 &1972028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e71d77ec3316dd541af65ee1f07bc55a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameState
-  timer: 0
-  timerRunning: 0
-  actions:
-  - id: tlf
-    done: 0
-    doneText: You called emergency services
-    notDoneText: You did not call emergency services
-    points: 10
-    penalty: 0
-  - id: vest
-    done: 0
-    doneText: You put on a high-visibility vest
-    notDoneText: 'You did not put on a high-visibility vest '
-    points: 10
-    penalty: 0
-  - id: hazardLight
-    done: 0
-    doneText: You turned on the hazard lights
-    notDoneText: You did not turn on the hazard lights
-    points: 10
-    penalty: 0
-  - id: triangle
-    done: 0
-    doneText: You placed the warning triangle
-    notDoneText: You did not place a warning triangle
-    points: 30
-    penalty: 0
-  - id: coffee
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: -10
-    penalty: 0
-  - id: jacket
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: -10
-    penalty: 0
-  - id: firstAidKit
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: 5
-    penalty: 0
-  - id: extinguisher
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: 0
-    penalty: 0
-  - id: pbrake
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: 0
-    penalty: 0
---- !u!114 &1972029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 983f730c54f44ac478cc807504c6505e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameRoot
 --- !u!1 &60197306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,9 +2748,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657886635}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.32930738, w: 0.9442228}
-  m_LocalPosition: {x: -8.3138, y: 2.3885999, z: 0}
-  m_LocalScale: {x: 5.3681645, y: 7.206433, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.32930735, w: 0.94422275}
+  m_LocalPosition: {x: -8.3138, y: 2.3886, z: 0}
+  m_LocalScale: {x: 5.3681636, y: 7.2064323, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -6289,7 +6147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1700543756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7792,13 +7650,12 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1477908545}
-  - {fileID: 1972025}
   - {fileID: 1700543757}
   - {fileID: 236284692}
   - {fileID: 1868237728}
   - {fileID: 1836580862}
   - {fileID: 137085566}
-  - {fileID: 657886637}
   - {fileID: 361977697}
   - {fileID: 1288827544}
   - {fileID: 136563228}
+  - {fileID: 657886637}

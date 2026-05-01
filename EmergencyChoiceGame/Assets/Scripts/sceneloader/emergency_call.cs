@@ -18,18 +18,21 @@ public class emergency_call : MonoBehaviour
     public TMP_Text txtTotPoints;
     public TMP_Text txtPoints;
     public Button btnReturn;
-    
+
+    private GameState state;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        state = GameRoot.Instance.GetComponent<GameState>();
+
         count = 0;
         totPoint = 0;
         point = 0;
         opt = 0;
         btnReturn.gameObject.SetActive(false);
-        //string lastScene = GameManager.Instance.lastScene;
 
 
         questions = new Question[]
@@ -157,7 +160,7 @@ public class emergency_call : MonoBehaviour
 
     public void Return()
     {
-        GameAction a = GameManager.Instance.actions.Find(a => a.id == "tlf");
+        GameAction a = state.actions.Find(a => a.id == "tlf");
         a.penalty += totPoint;
     }
 

@@ -19,9 +19,15 @@ public class MouseHover : MonoBehaviour
     public sceneloader_2b sceneLoader;
 
     private bool active;
+    private SceneController sceneController;
+    private GameState state;
+
 
     void Start()
     {
+        sceneController = GameRoot.Instance.GetComponent<SceneController>();
+        state = GameRoot.Instance.GetComponent<GameState>();
+
         originalScale = transform.localScale;
         hoverText.gameObject.SetActive(false);
 
@@ -68,7 +74,7 @@ public class MouseHover : MonoBehaviour
         }
         if (loadSceneOnClick)
         {
-            GameManager.Instance.LoadScene(nextScene);
+            sceneController.LoadScene(nextScene);
         }
         else
         {
@@ -83,7 +89,7 @@ public class MouseHover : MonoBehaviour
         {
             return;
         }
-        GameManager.Instance.CompleteAction(objectID);
+        state.CompleteAction(objectID);
     }
 
     public void SetActive(bool b)

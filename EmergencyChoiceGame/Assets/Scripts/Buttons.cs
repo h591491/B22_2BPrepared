@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
-    
+    private SceneController sceneController;
+    private CheckpointManager chmanager;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        sceneController = GameRoot.Instance.GetComponent<SceneController>();
+        chmanager = GameRoot.Instance.GetComponent<CheckpointManager>();
     }
 
     // Update is called once per frame
@@ -16,35 +20,35 @@ public class Buttons : MonoBehaviour
     }
     public void Restart()
     {
-        GameManager.Instance.Restart();
+        sceneController.Restart();
     }
 
     public void Gameover()
     {
-        GameManager.Instance.GameOver();
+        sceneController.GameOver();
     }
     public void GoToMainMenu()
     {
-        GameManager.Instance.GoToMainMenu();
+        sceneController.GoToMainMenu();
     }
 
     public void StartFromCheckpoint()
     {
-        GameManager.Instance.LoadCheckpoint();
+        chmanager.LoadCheckpoint();
     }
 
     public void LoadScene(string sceneName)
     {
-        GameManager.Instance.LoadScene(sceneName);
+        sceneController.LoadScene(sceneName);
     }
 
     public void LoadLastScene()
     {
-        GameManager.Instance.LoadLastScene();
+        sceneController.LoadLastScene();
     }
 
     public void SpescialSceneLoad()
     {
-        GameManager.Instance.SpescialSceneLoad();
+        sceneController.SpescialSceneLoad();
     }
 }
