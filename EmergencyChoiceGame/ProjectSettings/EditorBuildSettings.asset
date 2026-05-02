@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigame_warningTriangle.unity
     guid: 59babf0c527c8664e8abb71e4e22b44b
   - enabled: 1
+    path: Assets/Scenes/3A.unity
+    guid: e219de792008eeb4085638508846767d
+  - enabled: 1
+    path: Assets/Scenes/3B.unity
+    guid: b1c008c1d5e00e3469e66370d874aa5a
+  - enabled: 1
     path: Assets/Scenes/4a_Notify.unity
     guid: f959a64823bb0234bbb776aa196d0832
   - enabled: 1
@@ -47,6 +53,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Triage/TriageBack.unity
     guid: 1a16f425201b2e3468874bb24b6fb9af
+  - enabled: 1
+    path: Assets/Scenes/Triage/Driver.unity
+    guid: b7f486d5482fa884192b159d8c61c8b0
+  - enabled: 1
+    path: Assets/Scenes/Triage/Passenger1.unity
+    guid: 211f1a597fe47cc4a9ae4b8eb81b4c1e
+  - enabled: 1
+    path: Assets/Scenes/Triage/Passenger2.unity
+    guid: b97f5318c73767644b6c6ea4c86b08cd
+  - enabled: 1
+    path: Assets/Scenes/Triage/Passenger3.unity
+    guid: 960c6aabd46f7ee4a8083993ad71b8a9
   - enabled: 1
     path: Assets/Scenes/New Scene.unity
     guid: 2b35b1f3fc75df44498367032f37f4a1
