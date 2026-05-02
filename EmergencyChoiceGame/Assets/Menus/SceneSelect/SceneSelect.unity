@@ -1120,6 +1120,7 @@ GameObject:
   - component: {fileID: 653720757}
   - component: {fileID: 653720759}
   - component: {fileID: 653720760}
+  - component: {fileID: 653720761}
   m_Layer: 5
   m_Name: ScenarioFrame
   m_TagString: Untagged
@@ -1214,6 +1215,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070a5f3c56932524387472764b0c4ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttons
+--- !u!114 &653720761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653720755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abbb1824a9b253468bdc7d8f1b060f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
+  lastScene: 
+  currentScene: 
 --- !u!1 &716643376
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,8 +3019,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 842342835}
-        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+      - m_Target: {fileID: 653720761}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
