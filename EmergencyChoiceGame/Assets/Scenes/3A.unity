@@ -413,6 +413,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &177868684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 177868686}
+  - component: {fileID: 177868685}
+  m_Layer: 0
+  m_Name: Sceneloader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &177868685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177868684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68e098a71ce8954b903e9e1fbfede02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::sceneloader_2a
+  objects:
+  - {fileID: 2107250838}
+--- !u!4 &177868686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177868684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.28198, y: 0.59413, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &255972270
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,6 +2748,7 @@ GameObject:
   - component: {fileID: 2107250836}
   - component: {fileID: 2107250835}
   - component: {fileID: 2107250837}
+  - component: {fileID: 2107250838}
   m_Layer: 5
   m_Name: WarningTriangle
   m_TagString: Untagged
@@ -3123,6 +3170,26 @@ PolygonCollider2D:
       - {x: 7.707773, y: -10.201465}
       - {x: -7.707773, y: -10.201465}
   m_UseDelaunayMesh: 1
+--- !u!114 &2107250838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107250833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd2469994879b94199fccec3394282c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MouseHover
+  scaleMultiplier: 1.4
+  text: Place warning triangle
+  hoverText: {fileID: 2000920403}
+  loadSceneOnClick: 1
+  loadDialogueBox: 0
+  nextScene: Minigame_warningTriangle
+  objectID: triangle
+  sceneLoader: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3132,3 +3199,4 @@ SceneRoots:
   - {fileID: 1720236777}
   - {fileID: 255972274}
   - {fileID: 687098027}
+  - {fileID: 177868686}
