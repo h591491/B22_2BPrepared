@@ -57,13 +57,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Triage/Driver.unity
     guid: b7f486d5482fa884192b159d8c61c8b0
   - enabled: 1
-    path: Assets/Scenes/Triage/Passenger1.unity
+    path: Assets/Scenes/Triage/Passenger_Front.unity
     guid: 211f1a597fe47cc4a9ae4b8eb81b4c1e
   - enabled: 1
-    path: Assets/Scenes/Triage/Passenger2.unity
+    path: Assets/Scenes/Triage/Passenger_Back_Left.unity
     guid: b97f5318c73767644b6c6ea4c86b08cd
   - enabled: 1
-    path: Assets/Scenes/Triage/Passenger3.unity
+    path: Assets/Scenes/Triage/Passenger_Back_Right.unity
     guid: 960c6aabd46f7ee4a8083993ad71b8a9
   - enabled: 1
     path: Assets/Scenes/New Scene.unity

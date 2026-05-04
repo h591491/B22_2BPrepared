@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 395107601}
   - component: {fileID: 395107600}
   - component: {fileID: 395107603}
+  - component: {fileID: 395107604}
   m_Layer: 0
   m_Name: Passenger1Button
   m_TagString: Untagged
@@ -506,19 +507,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 395107601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1974790798}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Driver
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &395107601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +560,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIHoverText
   textToShow: Screaming and holding their shoulder, breathing normally
   hoverText: {fileID: 1765909935}
+--- !u!114 &395107604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395107598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ebedde9a3770244a28e2f3341c1595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassengerButton
+  objectID: passenger_driver
+  nextScene: Driver
 --- !u!1 &472553360
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1073,7 @@ GameObject:
   - component: {fileID: 1619162345}
   - component: {fileID: 1619162344}
   - component: {fileID: 1619162343}
+  - component: {fileID: 1619162347}
   m_Layer: 0
   m_Name: Passenger2Button
   m_TagString: Untagged
@@ -1154,19 +1158,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1619162345}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1974790798}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Passenger1
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1619162345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,6 +1197,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619162341}
   m_CullTransparentMesh: 1
+--- !u!114 &1619162347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619162341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ebedde9a3770244a28e2f3341c1595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassengerButton
+  objectID: passenger_front
+  nextScene: Passenger_Front
 --- !u!1 &1634510574
 GameObject:
   m_ObjectHideFlags: 0
