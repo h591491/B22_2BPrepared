@@ -449,6 +449,30 @@ MonoBehaviour:
     notDoneText: 
     points: 0
     penalty: 0
+  - id: passenger_back_right
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: 0
+    penalty: 0
+  - id: passenger_driver
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: 0
+    penalty: 0
+  - id: passenger_front
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: 0
+    penalty: 0
+  - id: passenger_back_left
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: 0
+    penalty: 0
 --- !u!114 &159332643
 MonoBehaviour:
   m_ObjectHideFlags: 0
