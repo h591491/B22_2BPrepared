@@ -9,9 +9,13 @@ public class GameState : MonoBehaviour
     public List<GameAction> actions = new List<GameAction>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        if (actions == null)
+        {
+            actions = new List<GameAction>();
+            Debug.LogWarning("Actions list is null");
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +35,9 @@ public class GameState : MonoBehaviour
         {
             a.done = true;
         }
+        else{
+            Debug.LogWarning($"Action with id: {id} not found.");
+        }
     }
 
     public bool CheckObjectState(string id)
@@ -47,7 +54,7 @@ public class GameState : MonoBehaviour
         {
             if (action.done)
             {
-                score += action.points + action.penalty;
+                score += action.points + action.additionalPoints;
             }
         }
         return score;
@@ -66,7 +73,7 @@ public class GameState : MonoBehaviour
         foreach (var a in actions)
         {
             a.done = false;
-            a.penalty = 0;
+            a.additionalPoints = 0;
         }
     }
 }

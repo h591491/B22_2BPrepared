@@ -14,6 +14,15 @@ public class CheckpointManager : MonoBehaviour
     {
         state = GetComponent<GameState>();
         scene = GetComponent<SceneController>();
+
+        if (state == null)
+        {
+            Debug.LogError("GameState missing!");
+        }
+        if (scene == null)
+        {
+            Debug.LogError("SceneController missing!");
+        }
     }
 
     // Update is called once per frame

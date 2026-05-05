@@ -9,7 +9,7 @@ public class GameAction
     public string doneText;
     public string notDoneText;
     public int points;
-    public int penalty;
+    public int additionalPoints;
 
     public string GetFeedback()
     {
@@ -25,7 +25,7 @@ public class GameAction
             doneText = this.doneText,
             notDoneText = this.notDoneText,
             points = this.points, 
-            penalty = this.penalty
+            additionalPoints = this.additionalPoints
         };
 
     }

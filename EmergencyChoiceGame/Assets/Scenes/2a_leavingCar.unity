@@ -1039,10 +1039,10 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Turn on the hazard lights
   hoverText: {fileID: 1864095297}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
   objectID: hazardLight
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
   sceneLoader: {fileID: 0}
 --- !u!1 &181818677
 GameObject:
@@ -3897,10 +3897,10 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Put on reflective vest
   hoverText: {fileID: 1864095297}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
   objectID: vest
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
   sceneLoader: {fileID: 0}
 --- !u!61 &915725020
 BoxCollider2D:
@@ -4405,10 +4405,10 @@ MonoBehaviour:
   scaleMultiplier: 1.2
   text: Click on the objects
   hoverText: {fileID: 1864095297}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
   objectID: 
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
   sceneLoader: {fileID: 0}
 --- !u!58 &1106060163
 CircleCollider2D:
@@ -4554,10 +4554,22 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Leave the car
   hoverText: {fileID: 1864095297}
-  loadSceneOnClick: 1
-  loadDialogueBox: 0
-  nextScene: 2b_bringFromCar
   objectID: 
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1700471598}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2b_bringFromCar
+          m_BoolArgument: 0
+        m_CallState: 2
   sceneLoader: {fileID: 0}
 --- !u!61 &1136806870
 BoxCollider2D:
@@ -6303,6 +6315,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1700471597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1700471599}
+  - component: {fileID: 1700471598}
+  m_Layer: 0
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1700471598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700471597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070a5f3c56932524387472764b0c4ba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buttons
+--- !u!4 &1700471599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700471597}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1173.8528, y: 180.58917, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1734819931
 GameObject:
   m_ObjectHideFlags: 0
@@ -7302,10 +7358,22 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Call emergency services
   hoverText: {fileID: 1864095297}
-  loadSceneOnClick: 1
-  loadDialogueBox: 0
-  nextScene: 4b_emergency_call
   objectID: tlf
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1700471598}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 4b_emergency_call
+          m_BoolArgument: 0
+        m_CallState: 2
   sceneLoader: {fileID: 0}
 --- !u!61 &1913931377
 BoxCollider2D:
@@ -8049,10 +8117,10 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Apply the parking brake
   hoverText: {fileID: 1864095297}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
   objectID: pbrake
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
   sceneLoader: {fileID: 0}
 --- !u!58 &2140491430
 CircleCollider2D:
@@ -8175,3 +8243,4 @@ SceneRoots:
   - {fileID: 2059018836}
   - {fileID: 1670953167}
   - {fileID: 2009008124}
+  - {fileID: 1700471599}

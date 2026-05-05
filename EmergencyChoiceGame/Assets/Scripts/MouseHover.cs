@@ -1,6 +1,7 @@
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MouseHover : MonoBehaviour
 {
@@ -9,24 +10,34 @@ public class MouseHover : MonoBehaviour
 
     public string text;
     public TMP_Text hoverText;
-
-    public bool loadSceneOnClick = false;
-    public bool loadDialogueBox = false;
-    public string nextScene;
-
+        
     public string objectID;
 
-    public sceneloader_2b sceneLoader;
+    public UnityEvent onClick;
 
     private bool active;
-    private SceneController sceneController;
     private GameState state;
 
 
     void Start()
     {
-        sceneController = GameRoot.Instance.GetComponent<SceneController>();
         state = GameRoot.Instance.GetComponent<GameState>();
+
+        if(state == null)
+        {
+            
+            Debug.LogError("GameState not found!");
+            enabled = false;
+            return;
+
+        }
+        if(hoverText == null)
+        {
+            Debug.LogError("HoverText is null", this);
+            enabled = false;
+            return;
+        
+        }
 
         originalScale = transform.localScale;
         hoverText.gameObject.SetActive(false);
@@ -65,22 +76,10 @@ public class MouseHover : MonoBehaviour
         }
 
         CheckId();
+        gameObject.SetActive(false);
+        hoverText.gameObject.SetActive(false);
 
-        if (loadDialogueBox)
-        {
-            gameObject.SetActive(false);
-            hoverText.gameObject.SetActive(false);
-            sceneLoader.ShowDialogueBox(nextScene);
-        }
-        if (loadSceneOnClick)
-        {
-            sceneController.LoadScene(nextScene);
-        }
-        else
-        {
-            gameObject.SetActive(false);
-            hoverText.gameObject.SetActive(false);
-        }       
+        onClick?.Invoke();
     }
 
     private void CheckId()

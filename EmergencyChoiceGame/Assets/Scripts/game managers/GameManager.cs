@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour
         foreach (GameAction action in actions)
         {
             if(action.done){
-                score += action.points + action.penalty;
+                score += action.points + action.additionalPoints;
             }
         }
         return score;
@@ -180,7 +180,7 @@ public class GameManager : MonoBehaviour
         foreach (var a in actions)
         {
             a.done = false;
-            a.penalty = 0;
+            a.additionalPoints = 0;
         }
 
         lastScene = "";

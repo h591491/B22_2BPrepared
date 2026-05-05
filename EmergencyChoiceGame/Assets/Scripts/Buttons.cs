@@ -47,8 +47,8 @@ public class Buttons : MonoBehaviour
         sceneController.LoadLastScene();
     }
 
-    public void SpescialSceneLoad()
+    public void SpecialSceneLoad()
     {
-        sceneController.SpescialSceneLoad();
+        sceneController.SpecialSceneLoad();
     }
 }
