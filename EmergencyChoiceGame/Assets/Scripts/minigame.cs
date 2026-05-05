@@ -50,13 +50,13 @@ public class minigame : MonoBehaviour
         else if (outerZone.OverlapPoint(pos))
         {
             placement = "Close";
-            action.penalty = -20;
+            action.additionalPoints = -20;
             action.doneText += ", but the placement was slightly off";
         }
         else
         {
             placement = "Wrong position";
-            action.penalty = -20;
+            action.additionalPoints = -20;
             action.doneText += ", but the placement was incorrect";
         }
     }

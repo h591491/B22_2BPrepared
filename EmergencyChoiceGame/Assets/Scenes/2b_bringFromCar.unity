@@ -669,11 +669,22 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Warning triangle
   hoverText: {fileID: 1863553454}
-  loadSceneOnClick: 0
-  loadDialogueBox: 1
-  nextScene: Minigame_warningTriangle
   objectID: triangle
-  sceneLoader: {fileID: 205672943}
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 205672943}
+        m_TargetAssemblyTypeName: sceneloader_2b, Assembly-CSharp
+        m_MethodName: ShowDialogueBox
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Minigame_warningTriangle
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &476672275
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1250,11 +1261,22 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Call emergency services
   hoverText: {fileID: 1863553454}
-  loadSceneOnClick: 1
-  loadDialogueBox: 0
-  nextScene: 4b_emergency_call
   objectID: tlf
-  sceneLoader: {fileID: 0}
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1416827323}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 4b_emergency_call
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &874038810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1546,11 +1568,10 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Put on the jacket
   hoverText: {fileID: 1863553454}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
   objectID: jacket
-  sceneLoader: {fileID: 0}
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &946765894
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1680,11 +1701,10 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: First aid kit
   hoverText: {fileID: 1863553454}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
   objectID: firstAidKit
-  sceneLoader: {fileID: 0}
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &948604873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1931,11 +1951,10 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Grab a coffee
   hoverText: {fileID: 1863553454}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
   objectID: coffee
-  sceneLoader: {fileID: 0}
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1222623606
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2168,11 +2187,10 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Fire extinguisher
   hoverText: {fileID: 1863553454}
-  loadSceneOnClick: 0
-  loadDialogueBox: 0
-  nextScene: 
   objectID: extinguisher
-  sceneLoader: {fileID: 0}
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1314789906
 SpriteRenderer:
   serializedVersion: 2
@@ -2305,7 +2323,6 @@ GameObject:
   - component: {fileID: 1367253343}
   - component: {fileID: 1367253342}
   - component: {fileID: 1367253341}
-  - component: {fileID: 1367253345}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2398,20 +2415,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1367253345
+--- !u!1 &1416827322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416827324}
+  - component: {fileID: 1416827323}
+  m_Layer: 0
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1416827323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367253340}
+  m_GameObject: {fileID: 1416827322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abbb1824a9b253468bdc7d8f1b060f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 070a5f3c56932524387472764b0c4ba2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneController
-  lastScene: 
-  currentScene: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buttons
+--- !u!4 &1416827324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416827322}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1173.8528, y: 180.58917, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863553452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,11 +2630,22 @@ MonoBehaviour:
   scaleMultiplier: 1.4
   text: Head to the crash site
   hoverText: {fileID: 1863553454}
-  loadSceneOnClick: 1
-  loadDialogueBox: 0
-  nextScene: 3A
   objectID: 
-  sceneLoader: {fileID: 0}
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1416827323}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 3A
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1897579079
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2854,3 +2912,4 @@ SceneRoots:
   - {fileID: 516675792}
   - {fileID: 205672944}
   - {fileID: 265704424}
+  - {fileID: 1416827324}

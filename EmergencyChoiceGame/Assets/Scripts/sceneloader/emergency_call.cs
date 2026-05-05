@@ -161,7 +161,7 @@ public class emergency_call : MonoBehaviour
     public void Return()
     {
         GameAction a = state.actions.Find(a => a.id == "tlf");
-        a.penalty += totPoint;
+        a.additionalPoints += totPoint;
     }
 
 

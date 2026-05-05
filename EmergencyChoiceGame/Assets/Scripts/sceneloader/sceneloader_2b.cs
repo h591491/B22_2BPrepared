@@ -7,7 +7,7 @@ public class sceneloader_2b : MonoBehaviour
     public GameObject dialogue;
     public MouseHover[] objects;
 
-    private string scenename;
+    private string nextScene;
 
     private SceneController sceneController;
     private GameState state;
@@ -45,11 +45,11 @@ public class sceneloader_2b : MonoBehaviour
         
     }
 
-    public void ShowDialogueBox(string scenename)
+    public void ShowDialogueBox(string nextScene)
     {
         SetMouseHoverActive(false);
 
-        this.scenename = scenename;
+        this.nextScene = nextScene;
         task.SetActive(false);
         dialogue.SetActive(true);
     }
@@ -67,7 +67,7 @@ public class sceneloader_2b : MonoBehaviour
 
     public void placeTriangleNow()
     {
-        sceneController.LoadScene(scenename);
+        sceneController.LoadScene(nextScene);
     }
 
     public void SetMouseHoverActive(bool state)

@@ -13,6 +13,10 @@ public class SceneController : MonoBehaviour
     void Awake()
     {
         state = GetComponent<GameState>();
+        if (state == null)
+        {
+            Debug.LogError("GameState missing!");
+        }
     }
 
     // Update is called once per frame
@@ -41,24 +45,24 @@ public class SceneController : MonoBehaviour
     public void Restart()
     {
         state.ResetGameState();
-        LoadScene("intro_animation");
+        LoadScene(Scenes.Intro);
     }
 
     public void GoToMainMenu()
     {
         state.ResetGameState();
-        LoadScene("MainMenu");
+        LoadScene(Scenes.MainMenu);
     }
 
     public void GameOver()
     {
         state.timerRunning = false;
-        LoadScene("gameover");
+        LoadScene(Scenes.GameOver);
     }
 
 
 
-    public void SpescialSceneLoad()
+    public void SpecialSceneLoad()
     {
         switch (currentScene)
         {
