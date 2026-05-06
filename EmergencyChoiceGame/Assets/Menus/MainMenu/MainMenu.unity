@@ -474,6 +474,18 @@ MonoBehaviour:
     notDoneText: 
     points: 0
     additionalPoints: 0
+  - id: carCheck
+    done: 0
+    doneText: 'You checked the vehicle for hazards. '
+    notDoneText: 'You did not check the vehicle for potential hazards. '
+    points: 15
+    additionalPoints: 0
+  - id: windowKnock
+    done: 0
+    doneText: 
+    notDoneText: 
+    points: 0
+    additionalPoints: 0
 --- !u!114 &159332643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +556,19 @@ MonoBehaviour:
     badText: This is not safe. You did not bring a warning triangle.  Without proper
       warning, other drivers may not see the accident in time, increasing the risk
       of further collisions.  Always secure the scene before approaching.
+  - sceneName: 3A
+    goodRequiredActions:
+    - triangle
+    - carCheck
+    mediumRequiredActions: []
+    goodText: 'Good decision. You secured the scene by using a warning triangle and
+      checked the vehicle for potential hazards before approaching.  This helps prevent
+      further accidents and ensures your own safety before assisting others. '
+    mediumText: 
+    badText: 'This is not safe. You approached the vehicle without properly securing
+      the scene or checking for potential hazards.  There may be risks such as fire,
+      fuel leaks, or oncoming traffic. Always ensure your own safety before assisting
+      others. '
 --- !u!1 &201115860
 GameObject:
   m_ObjectHideFlags: 0
@@ -4032,10 +4057,10 @@ RectTransform:
   - {fileID: 1883126108}
   m_Father: {fileID: 201115861}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 60}
-  m_SizeDelta: {x: 1450, y: 730}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1670106242
 MonoBehaviour:

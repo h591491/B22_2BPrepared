@@ -45,6 +45,18 @@ public class MouseHover : MonoBehaviour
         active = true;
     }
 
+    private void Update()
+    {
+        if (feedbackUI.UIBlocking)
+        {
+            active = false;
+        }
+        else
+        {
+            active = true;
+        }
+    }
+
     void OnMouseEnter()
     {
         if (!active)
