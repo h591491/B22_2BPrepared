@@ -1043,7 +1043,6 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
-  sceneLoader: {fileID: 0}
 --- !u!1 &181818677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,7 +3900,6 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
-  sceneLoader: {fileID: 0}
 --- !u!61 &915725020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4409,7 +4407,6 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
-  sceneLoader: {fileID: 0}
 --- !u!58 &1106060163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4560,7 +4557,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1700471598}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: setNextScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4570,7 +4567,18 @@ MonoBehaviour:
           m_StringArgument: 2b_bringFromCar
           m_BoolArgument: 0
         m_CallState: 2
-  sceneLoader: {fileID: 0}
+      - m_Target: {fileID: 1700471598}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: showDetailedFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2b_bringFromCar
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1136806870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7374,7 +7382,6 @@ MonoBehaviour:
           m_StringArgument: 4b_emergency_call
           m_BoolArgument: 0
         m_CallState: 2
-  sceneLoader: {fileID: 0}
 --- !u!61 &1913931377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8121,7 +8128,6 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls: []
-  sceneLoader: {fileID: 0}
 --- !u!58 &2140491430
 CircleCollider2D:
   m_ObjectHideFlags: 0
