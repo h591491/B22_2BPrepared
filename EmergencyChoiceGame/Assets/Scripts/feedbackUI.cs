@@ -16,8 +16,11 @@ public class feedbackUI : MonoBehaviour
 
     public List<SceneFeedback> sceneFeedbacks;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static bool UIBlocking = false;
+
+
+// Start is called once before the first execution of Update after the MonoBehaviour is created
+void Start()
     {
         sceneController = GameRoot.Instance.GetComponent<SceneController>();
         if (sceneController == null)
@@ -29,7 +32,7 @@ public class feedbackUI : MonoBehaviour
         state = GameRoot.Instance.GetComponent<GameState>();
         if (state == null)
         {
-            Debug.LogError("SceneController missing!");
+            Debug.LogError("GameState missing!");
             enabled = false;
             return;
         }
@@ -56,6 +59,8 @@ public class feedbackUI : MonoBehaviour
                 c.gameObject.SetActive(false);
             }
         }
+
+        UIBlocking = true;
         feedbackCanvas.SetActive(true);
     }
     public void ShowDetailedFeedback()
@@ -74,6 +79,8 @@ public class feedbackUI : MonoBehaviour
 
     public void HideFeedback()
     {
+        UIBlocking = false;
+
         Canvas[] canvases = Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None);
 
         foreach (Canvas c in canvases)

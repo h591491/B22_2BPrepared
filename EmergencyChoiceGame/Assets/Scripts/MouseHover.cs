@@ -16,6 +16,7 @@ public class MouseHover : MonoBehaviour
     public UnityEvent onClick;
 
     private bool active;
+    private bool deactivate;
     private GameState state;
 
 
@@ -43,6 +44,18 @@ public class MouseHover : MonoBehaviour
         hoverText.gameObject.SetActive(false);
 
         active = true;
+    }
+
+    private void Update()
+    {
+        if (feedbackUI.UIBlocking || deactivate)
+        {
+            active = false;
+        }
+        else
+        {
+            active = true;
+        }
     }
 
     void OnMouseEnter()
@@ -93,7 +106,7 @@ public class MouseHover : MonoBehaviour
 
     public void SetActive(bool b)
     {
-        active = b;
+        deactivate = !b;
 
         if (!b)
         {
