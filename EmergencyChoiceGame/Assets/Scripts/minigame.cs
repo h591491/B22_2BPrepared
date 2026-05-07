@@ -19,16 +19,20 @@ public class minigame : MonoBehaviour
 
     private GameAction action;
     private GameState state;
+    private SceneController sceneController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         state = GameRoot.Instance.GetComponent<GameState>();
+        sceneController = GameRoot.Instance.GetComponent<SceneController>();
 
         feedback.gameObject.SetActive(false);
         btn.gameObject.SetActive(false);
 
         action = state.actions.Find(a => a.id == "triangle");
+
+        state.triangleTries--;
     }
 
     // Update is called once per frame
@@ -55,6 +59,7 @@ public class minigame : MonoBehaviour
         }
         else
         {
+            state.UndoAction("triangle");
             placement = "Wrong position";
             action.additionalPoints = -20;
             action.doneText += ", but the placement was incorrect";

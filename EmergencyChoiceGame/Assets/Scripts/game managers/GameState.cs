@@ -8,6 +8,9 @@ public class GameState : MonoBehaviour
     public bool timerRunning = false;
     public List<GameAction> actions = new List<GameAction>();
     public string gameOverReason;
+    public EmergencycallState emergencycallState;
+
+    public int triangleTries = 2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -16,6 +19,11 @@ public class GameState : MonoBehaviour
         {
             actions = new List<GameAction>();
             Debug.LogWarning("Actions list is null");
+        }
+
+        if (emergencycallState == null)
+        {
+            emergencycallState = new EmergencycallState();
         }
     }
 
@@ -37,6 +45,19 @@ public class GameState : MonoBehaviour
             a.done = true;
         }
         else{
+            Debug.LogWarning($"Action with id: {id} not found.");
+        }
+    }
+    public void UndoAction(string id)
+    {
+        var a = actions.Find(a => a.id == id);
+
+        if (a != null)
+        {
+            a.done = false;
+        }
+        else
+        {
             Debug.LogWarning($"Action with id: {id} not found.");
         }
     }
