@@ -30,6 +30,14 @@ public class PassengerButton : MonoBehaviour
 
     void OnClicked()
     {
+        if (!state.CheckPhoneCall())
+        {
+            state.gameOverReason = "You failed to fully inform emergency services about the passengers.";
+            state.timerRunning = false;
+            sceneController.LoadScene(Scenes.GameOver);
+            return;
+        }
+
         // Mark as treated
         state.CompleteAction(objectID);
 
