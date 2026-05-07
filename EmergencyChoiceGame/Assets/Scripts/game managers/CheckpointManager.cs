@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class CheckpointManager : MonoBehaviour
 {
-    public Checkpoint lastCheckpoint = new Checkpoint() { sceneName = "intro_animation" };
+    public Checkpoint lastCheckpoint;
     
     private GameState state;
     private SceneController scene;
@@ -23,12 +23,16 @@ public class CheckpointManager : MonoBehaviour
         {
             Debug.LogError("SceneController missing!");
         }
+
+        SaveFirstCheckpoint();
     }
 
     // Update is called once per frame
-    void Update()
+    
+    public void SaveFirstCheckpoint()
     {
-        
+        lastCheckpoint = new Checkpoint() { sceneName = "intro_animation" };
+        lastCheckpoint.actions = state.actions.Select(a => a.clone()).ToList();
     }
     public void SaveCheckpoint()
     {

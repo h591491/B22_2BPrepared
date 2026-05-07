@@ -111,7 +111,7 @@ void Start()
         else
         {
             text += sf.badText;
-            if (medium) text += sf.mediumText;
+            //if (medium) text += sf.mediumText;
         }
 
         return text;

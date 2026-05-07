@@ -1930,18 +1930,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 595768531}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: SetGameOverReason
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: You left the scene without stopping.
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 595768531}
-        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
         m_MethodName: setNextScene
         m_Mode: 5
         m_Arguments:
@@ -1962,8 +1950,8 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "This is not a safe choice.\\nYou should stop, secure
-            the area, and assess the situation before continuing.\\n\\nGame Over
-            \u2013 you did not stop."
+            the area, and assess the situation before continuing.\\n+nGame Over \u2013
+            you did not stop."
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &453607775
@@ -6576,7 +6564,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Good choice.\nYou should always stop to assess the situation
+          m_StringArgument: Good choice. You should always stop to assess the situation
             before taking further action.
           m_BoolArgument: 0
         m_CallState: 2

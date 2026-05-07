@@ -486,6 +486,7 @@ MonoBehaviour:
     notDoneText: 
     points: 0
     additionalPoints: 0
+  gameOverReason: 
 --- !u!114 &159332643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,40 +536,37 @@ MonoBehaviour:
     - hazardLight
     mediumRequiredActions:
     - tlf
-    goodText: Good preparation. Turning on hazard lights and wearing a high-visibility
+    goodText: Good preparation.\nTurning on hazard lights and wearing a high-visibility
       vest are crucial for your safety and to warn other drivers. Securing the car
-      is also important before leaving it.
+      is also important before leaving it.\n
     mediumText: Before calling emergency services, you should assess the situation
       to provide accurate information.
     badText: Before leaving your vehicle, you must secure the situation. Hazard lights
       and a high-visibility vest are essential to avoid further danger. Always ensure
-      your own safety before helping others.
+      your own safety before helping others.\n
   - sceneName: 2b_bringFromCar
     goodRequiredActions:
     - triangle
     mediumRequiredActions:
     - firstAidKit
-    goodText: Good decision. Bringing a warning triangle is essential to alert other
+    goodText: Good decision.\nBringing a warning triangle is essential to alert other
       drivers and prevent further accidents.  Securing the scene is the first priority
-      before approaching the situation.
+      before approaching the situation.\n
     mediumText: Bringing first aid equipment can be helpful if someone is injured. 
       However, securing the scene should always come before providing assistance.
-    badText: This is not safe. You did not bring a warning triangle.  Without proper
+    badText: This is not safe.\nYou did not bring a warning triangle.  Without proper
       warning, other drivers may not see the accident in time, increasing the risk
-      of further collisions.  Always secure the scene before approaching.
+      of further collisions.  Always secure the scene before approaching.\n
   - sceneName: 3A
     goodRequiredActions:
     - triangle
-    - carCheck
     mediumRequiredActions: []
-    goodText: 'Good decision. You secured the scene by using a warning triangle and
-      checked the vehicle for potential hazards before approaching.  This helps prevent
-      further accidents and ensures your own safety before assisting others. '
+    goodText: Good decision.\nYou secured the scene and checked for potential hazards
+      before approaching. This reduces risk and ensures your safety.
     mediumText: 
-    badText: 'This is not safe. You approached the vehicle without properly securing
-      the scene or checking for potential hazards.  There may be risks such as fire,
-      fuel leaks, or oncoming traffic. Always ensure your own safety before assisting
-      others. '
+    badText: "This is not safe.\\nYou approached the vehicle without securing the
+      scene. Placing a warning triangle is essential to warn other drivers and prevent
+      further accidents.\\n\\nGame Over \u2013 you did not ensure a safe approach."
 --- !u!1 &201115860
 GameObject:
   m_ObjectHideFlags: 0

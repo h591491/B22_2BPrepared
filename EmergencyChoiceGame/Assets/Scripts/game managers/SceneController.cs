@@ -43,30 +43,13 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(lastScene);
     }
 
-    public void Restart()
-    {
-        state.ResetGameState();
-        LoadScene(Scenes.Intro);
-    }
 
-    public void GoToMainMenu()
-    {
-        state.ResetGameState();
-        LoadScene(Scenes.MainMenu);
-    }
-
-    public void GameOver()
-    {
-        state.timerRunning = false;
-        LoadScene(Scenes.GameOver);
-    }
-
-    public string SpecialSceneSet(string requiredActionId)
+    public string SpecialSceneSet(bool requirement)
     {
         switch (currentScene)
         {
             case "3A":
-                if (state.CheckObjectState(requiredActionId))
+                if (requirement)
                 {
                     return "TriageFront";
                 }
@@ -92,7 +75,7 @@ public class SceneController : MonoBehaviour
                 {
                     LoadLastScene();
                 }
-                break;
+                break; 
             case "first_summary":
                 if (lastScene == "gameover")
                 {
