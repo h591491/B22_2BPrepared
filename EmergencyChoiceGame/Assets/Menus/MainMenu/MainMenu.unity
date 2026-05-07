@@ -1463,7 +1463,6 @@ GameObject:
   m_Component:
   - component: {fileID: 420663775}
   - component: {fileID: 420663774}
-  - component: {fileID: 420663773}
   - component: {fileID: 420663772}
   - component: {fileID: 420663771}
   - component: {fileID: 420663770}
@@ -1537,18 +1536,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
---- !u!114 &420663773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420663769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09e791a2aa98ca4589e378c5e5e8890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SettingsAnimation
 --- !u!222 &420663774
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4306,7 +4293,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1463483084}
   - component: {fileID: 1463483086}
-  - component: {fileID: 1463483087}
   - component: {fileID: 1463483090}
   - component: {fileID: 1463483089}
   - component: {fileID: 1463483088}
@@ -4346,18 +4332,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463483083}
   m_CullTransparentMesh: 1
---- !u!114 &1463483087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463483083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09e791a2aa98ca4589e378c5e5e8890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SettingsAnimation
 --- !u!114 &1463483088
 MonoBehaviour:
   m_ObjectHideFlags: 0
