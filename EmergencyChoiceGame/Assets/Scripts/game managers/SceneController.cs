@@ -61,40 +61,4 @@ public class SceneController : MonoBehaviour
 
         return "";
     }
-
-    public void SpecialSceneLoad()
-    {
-        switch (currentScene)
-        {
-            case "4b_emergency_call":
-                if (lastScene == "4a_Notify")
-                {
-                    LoadScene("New Scene");
-                }
-                else
-                {
-                    LoadLastScene();
-                }
-                break; 
-            case "first_summary":
-                if (lastScene == "gameover")
-                {
-                    LoadScene("gameover");
-                    break;
-                }
-                if (state.CheckObjectState("tlf"))
-                {
-                    LoadScene("New Scene");
-                }
-                else
-                {
-                    LoadScene("4a_Notify");
-                }
-                break;
-
-
-        }
-
-
-    }
 }
