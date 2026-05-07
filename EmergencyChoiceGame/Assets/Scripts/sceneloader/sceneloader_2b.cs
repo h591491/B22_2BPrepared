@@ -20,7 +20,7 @@ public class sceneloader_2b : MonoBehaviour
         state = GameRoot.Instance.GetComponent<GameState>();
         chmanager = GameRoot.Instance.GetComponent<CheckpointManager>();
 
-        //chmanager.SaveCheckpoint();
+        chmanager.SaveCheckpoint();
 
         dialogue.SetActive(false);
         task.SetActive(true);
@@ -30,7 +30,12 @@ public class sceneloader_2b : MonoBehaviour
             bool hide = false;
 
             // Sjekk state
-            if (state.CheckObjectState(obj.objectID))
+            if (obj.objectID != "tlf" && state.CheckObjectState(obj.objectID))
+            {
+                hide = true;
+            }
+
+            if (obj.objectID == "triangle" && state.triangleTries <= 0)
             {
                 hide = true;
             }

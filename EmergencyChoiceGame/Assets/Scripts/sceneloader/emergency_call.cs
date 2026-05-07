@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class emergency_call : MonoBehaviour
 {
-    private int count;
     private int point;
-    private int totPoint;
     private int opt;
     private Question[] questions;
+
+    private EmergencycallState ecState;
 
     public TMP_Text txtQ;
     public TMP_Text txtA;
@@ -28,101 +28,21 @@ public class emergency_call : MonoBehaviour
     {
         state = GameRoot.Instance.GetComponent<GameState>();
 
-        count = 0;
-        totPoint = 0;
-        point = 0;
-        opt = 0;
-        btnReturn.gameObject.SetActive(false);
-
-
-        questions = new Question[]
-        {
-            new Question
-            {
-                questionText = "Emergency services. What is your emergency?",
-                options = new Option[]
-                {
-                    new Option { text = "There has been a car accident", score = 2 },
-                    new Option { text = "Someone is hurt", score = -2 },
-                    new Option { text = "I need help", score = 0 }
-                }
-            },
-            new Question
-            {
-                questionText = "What is your exact location?",
-                options = new Option[]
-                {
-                    new Option { text = "I don't know", score = 0 },
-                    new Option { text = "I'm on road 97, Fjord", score = -2 },
-                    new Option { text = "I'm on road 116, Fjell", score = 2 }
-                }
-            },
-            new Question
-            {
-                questionText = "Tell me exactly what has happened.",
-                options = new Option[]
-                {
-                    new Option { text = "Two cars crashed", score = -2 },
-                    new Option { text = "A car drove off the road", score = 2 },
-                    new Option { text = "I'm not sure", score = 0 }
-                }
-            },
-            new Question
-            {
-                questionText = "Can you give me your name and the number you're calling from?",
-                options = new Option[]
-                {
-                    new Option { text = "Yes, it's Kim, 12345678", score = 2 },
-                    new Option { text = "My name is Kim", score = 0 },
-                    new Option { text = "I don't want to say", score = -2 }
-                }
-            },
-            new Question
-            {
-                questionText = "Are there any injured?",
-                options = new Option[]
-                {
-                    new Option { text = "Yes", score = 0 },
-                    new Option { text = "No", score = 0 },
-                    new Option { text = "I don't know", score = 0 }
-                }
-            },
-            new Question
-            {
-                questionText = "How many people are hurt?",
-                options = new Option[]
-                {
-                    new Option { text = "I don't know", score = -2 },
-                    new Option { text = "2", score = 0 },
-                    new Option { text = "4", score = 2 }
-                }
-            }
-            ,
-            new Question
-            {
-                questionText = "Alright, stay on the line. Help is on the way.",
-                options = null
-            }
-        };
+        ecState = state.emergencycallState;
+        questions = ecState.questions;
 
         ShowText();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-    }
 
     public void ShowText()
     {
-        if(questions[count].options == null)
+        if(questions[ecState.count].options == null)
         {
             btnReturn.gameObject.SetActive(true);
         }
         
-        txtQ.text = questions[count].questionText;
+        txtQ.text = questions[ecState.count].questionText;
         txtA.text = "";
 
 
@@ -130,12 +50,12 @@ public class emergency_call : MonoBehaviour
 
     public void ShowOption(int opt)
     {
-        if (questions[count].options == null)
+        if (questions[ecState.count].options == null)
         {
             return;
         }
 
-        txtA.text = questions[count].options[opt - 1].text;
+        txtA.text = questions[ecState.count].options[opt - 1].text;
         this.opt = opt;
     }
 
@@ -147,12 +67,12 @@ public class emergency_call : MonoBehaviour
             return;
         }
 
-        point = questions[count].options[opt - 1].score;
-        totPoint += point;
-        count++;
+        point = questions[ecState.count].options[opt - 1].score;
+        ecState.totPoint += point;
+        ecState.count++;
         ShowText();
 
-        txtTotPoints.text = $"Points: {totPoint}";
+        txtTotPoints.text = $"Points: {ecState.totPoint}";
         if(point >= 0) txtPoints.text = $"+{point}";
         else txtPoints.text = point.ToString();
         opt = 0;
@@ -161,7 +81,7 @@ public class emergency_call : MonoBehaviour
     public void Return()
     {
         GameAction a = state.actions.Find(a => a.id == "tlf");
-        a.additionalPoints += totPoint;
+        a.additionalPoints += ecState.totPoint;
     }
 
 

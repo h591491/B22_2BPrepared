@@ -36,6 +36,7 @@ public class CheckpointManager : MonoBehaviour
     }
     public void SaveCheckpoint()
     {
+        state.triangleTries = 1;
         lastCheckpoint.sceneName = SceneManager.GetActiveScene().name;
         lastCheckpoint.actions = state.actions.Select(a => a.clone()).ToList();
     }
