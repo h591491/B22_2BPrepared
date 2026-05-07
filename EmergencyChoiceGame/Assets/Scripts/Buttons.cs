@@ -58,6 +58,11 @@ public class Buttons : MonoBehaviour
     {
         feedbackUI.setNextScene(nextScene);
     }
+    public void SpecialSceneSet(string requiredAction)
+    {
+        string nextScene = sceneController.SpecialSceneSet(requiredAction);
+        feedbackUI.setNextScene(nextScene);
+    }
 
     public void showFeedback(string feedbackText)
     {
