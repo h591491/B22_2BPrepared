@@ -531,6 +531,13 @@ MonoBehaviour:
       part of First Aid '
     points: 10
     additionalPoints: 0
+  - id: q_monitoring
+    done: 0
+    doneText: Continous monitoring of passengers in an important part of First Aid
+    notDoneText: 'Did not continously monitor all passengers which is an important
+      part of First Aid '
+    points: 10
+    additionalPoints: 0
   gameOverReason: 
   triangleTries: 2
 --- !u!114 &159332643
@@ -1076,109 +1083,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394206676}
   m_CullTransparentMesh: 1
---- !u!1 &403791930
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 403791932}
-  - component: {fileID: 403791931}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &403791931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403791930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec1ec8a0c192db64d9ce0d20d552e70a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  timer: 0
-  timerRunning: 0
-  actions:
-  - id: tlf
-    done: 0
-    doneText: You called emergency services
-    notDoneText: You did not call emergency services
-    points: 20
-    additionalPoints: 0
-  - id: vest
-    done: 0
-    doneText: You put on a high-visibility vest
-    notDoneText: You did not call emergency services
-    points: 10
-    additionalPoints: 0
-  - id: hazardLight
-    done: 0
-    doneText: You turned on the hazard lights
-    notDoneText: You did not turn on the hazard lights
-    points: 10
-    additionalPoints: 0
-  - id: triangle
-    done: 0
-    doneText: You placed the warning triangle
-    notDoneText: You did not place a warning triangle
-    points: 30
-    additionalPoints: 0
-  - id: coffee
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: -10
-    additionalPoints: 0
-  - id: jacket
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: -10
-    additionalPoints: 0
-  - id: firstAidKit
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: 5
-    additionalPoints: 0
-  - id: extinguisher
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: 0
-    additionalPoints: 0
-  - id: pbrake
-    done: 0
-    doneText: 
-    notDoneText: 
-    points: 0
-    additionalPoints: 0
-  lastScene: 
-  currentScene: 
---- !u!4 &403791932
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403791930}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -176.93129, y: 250.1133, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &409554267
 GameObject:
   m_ObjectHideFlags: 0
@@ -6382,7 +6286,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1105579261}
-  - {fileID: 403791932}
   - {fileID: 159332644}
   - {fileID: 815224610}
   - {fileID: 1463483084}
