@@ -21,7 +21,7 @@ public class sceneloader_2a : MonoBehaviour
             bool hide = false;
 
             // Sjekk state
-            if (state.CheckObjectState(obj.objectID))
+            if (obj.objectID != "tlf" && state.CheckObjectState(obj.objectID))
             {
                 hide = true;
             }

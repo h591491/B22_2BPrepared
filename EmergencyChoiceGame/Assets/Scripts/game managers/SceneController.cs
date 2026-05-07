@@ -51,7 +51,7 @@ public class SceneController : MonoBehaviour
             case "3A":
                 if (requirement)
                 {
-                    return "4a_Notify";
+                    return "TriageFront";
                 }
                 else
                 {

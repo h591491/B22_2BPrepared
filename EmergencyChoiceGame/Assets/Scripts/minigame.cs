@@ -55,6 +55,7 @@ public class minigame : MonoBehaviour
         }
         else
         {
+            state.UndoAction("triangle");
             placement = "Wrong position";
             action.additionalPoints = -20;
             action.doneText += ", but the placement was incorrect";
