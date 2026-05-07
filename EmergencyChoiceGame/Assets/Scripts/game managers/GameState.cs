@@ -10,6 +10,8 @@ public class GameState : MonoBehaviour
     public string gameOverReason;
     public EmergencycallState emergencycallState;
 
+    public int triangleTries = 2;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {

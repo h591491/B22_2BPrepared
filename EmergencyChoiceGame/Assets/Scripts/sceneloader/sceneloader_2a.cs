@@ -14,7 +14,7 @@ public class sceneloader_2a : MonoBehaviour
         state = GameRoot.Instance.GetComponent<GameState>();
 
         // For testing
-        chmanager.SaveCheckpoint();
+        //chmanager.SaveCheckpoint();
 
         foreach (var obj in objects)
         {
@@ -22,6 +22,11 @@ public class sceneloader_2a : MonoBehaviour
 
             // Sjekk state
             if (obj.objectID != "tlf" && state.CheckObjectState(obj.objectID))
+            {
+                hide = true;
+            }
+            
+            if(obj.objectID == "triangle" && state.triangleTries <= 0)
             {
                 hide = true;
             }

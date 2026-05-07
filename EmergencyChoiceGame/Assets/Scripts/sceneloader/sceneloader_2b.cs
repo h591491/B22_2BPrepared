@@ -35,6 +35,11 @@ public class sceneloader_2b : MonoBehaviour
                 hide = true;
             }
 
+            if (obj.objectID == "triangle" && state.triangleTries <= 0)
+            {
+                hide = true;
+            }
+
             obj.gameObject.SetActive(!hide);
         }
     }
