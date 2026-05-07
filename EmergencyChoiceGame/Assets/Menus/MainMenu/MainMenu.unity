@@ -400,8 +400,8 @@ MonoBehaviour:
     done: 0
     doneText: You called emergency services
     notDoneText: You did not call emergency services
-    points: 10
-    additionalPoints: 0
+    points: 20
+    additionalPoints: -20
   - id: vest
     done: 0
     doneText: You put on a high-visibility vest
