@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd2469994879b94199fccec3394282c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseHover
-  scaleMultiplier: 1.2
+  scaleMultiplier: 1.1
   text: Call emergency services
   hoverText: {fileID: 2024234070}
   objectID: tlf
