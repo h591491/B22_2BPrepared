@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -60,7 +61,23 @@ public class SceneController : MonoBehaviour
         LoadScene(Scenes.GameOver);
     }
 
+    public string SpecialSceneSet(string requiredActionId)
+    {
+        switch (currentScene)
+        {
+            case "3A":
+                if (state.CheckObjectState(requiredActionId))
+                {
+                    return "TriageFront";
+                }
+                else
+                {
+                    return Scenes.GameOver;
+                }
+        }
 
+        return "";
+    }
 
     public void SpecialSceneLoad()
     {
