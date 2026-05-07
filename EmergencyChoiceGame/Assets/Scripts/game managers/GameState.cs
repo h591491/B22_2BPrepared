@@ -97,5 +97,12 @@ public class GameState : MonoBehaviour
             a.done = false;
             a.additionalPoints = 0;
         }
+
+        emergencycallState.SetStartValues();
+    }
+
+    public bool CheckPhoneCall()
+    {
+        return emergencycallState.questions[emergencycallState.count].options == null;
     }
 }

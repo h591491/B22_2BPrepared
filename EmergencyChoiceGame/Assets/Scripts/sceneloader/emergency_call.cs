@@ -76,6 +76,7 @@ public class emergency_call : MonoBehaviour
         if(point >= 0) txtPoints.text = $"+{point}";
         else txtPoints.text = point.ToString();
         opt = 0;
+
     }
 
     public void Return()

@@ -53,11 +53,6 @@ public class Buttons : MonoBehaviour
         sceneController.LoadLastScene();
     }
 
-    public void SpecialSceneLoad() 
-    {
-        sceneController.SpecialSceneLoad();
-    }
-
     public void setNextScene(string nextScene) 
     {
         feedbackUI.setNextScene(nextScene);
