@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 220203518}
   - component: {fileID: 220203517}
   - component: {fileID: 220203516}
+  - component: {fileID: 220203519}
   m_Layer: 5
   m_Name: ButtonB
   m_TagString: Untagged
@@ -201,19 +202,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 220203517}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2013079599}
-        m_TargetAssemblyTypeName: FollowupController, Assembly-CSharp
-        m_MethodName: ShowPanel
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1189994656}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &220203517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +241,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220203514}
   m_CullTransparentMesh: 1
+--- !u!114 &220203519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220203514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485dad6df315d0408122d8b1ea90f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnswerButton
+  actionID: q_back_right_check
+  pointModifier: -20
+  followup: {fileID: 2013079599}
+  returnToTriageOnClick: 0
+  nextPanel: {fileID: 1189994656}
 --- !u!1 &266218007
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +700,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2013079603}
+  m_Father: {fileID: 2129265446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1052,6 +1058,7 @@ GameObject:
   - component: {fileID: 915666835}
   - component: {fileID: 915666834}
   - component: {fileID: 915666833}
+  - component: {fileID: 915666836}
   m_Layer: 5
   m_Name: ButtonC
   m_TagString: Untagged
@@ -1122,19 +1129,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 915666834}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2013079599}
-        m_TargetAssemblyTypeName: FollowupController, Assembly-CSharp
-        m_MethodName: ReturnToTriage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &915666834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,6 +1168,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915666831}
   m_CullTransparentMesh: 1
+--- !u!114 &915666836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915666831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485dad6df315d0408122d8b1ea90f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnswerButton
+  actionID: q_back_right_tourniquet
+  pointModifier: -20
+  followup: {fileID: 2013079599}
+  returnToTriageOnClick: 1
+  nextPanel: {fileID: 0}
 --- !u!1 &1189994656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1236,7 @@ GameObject:
   - component: {fileID: 1194449281}
   - component: {fileID: 1194449280}
   - component: {fileID: 1194449279}
+  - component: {fileID: 1194449282}
   m_Layer: 5
   m_Name: ButtonB
   m_TagString: Untagged
@@ -1294,19 +1307,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1194449280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2013079599}
-        m_TargetAssemblyTypeName: FollowupController, Assembly-CSharp
-        m_MethodName: ReturnToTriage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1194449280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1346,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194449277}
   m_CullTransparentMesh: 1
+--- !u!114 &1194449282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194449277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485dad6df315d0408122d8b1ea90f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnswerButton
+  actionID: q_back_right_tourniquet
+  pointModifier: 0
+  followup: {fileID: 2013079599}
+  returnToTriageOnClick: 1
+  nextPanel: {fileID: 0}
 --- !u!1 &1252235550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,6 +1454,7 @@ GameObject:
   - component: {fileID: 1305237494}
   - component: {fileID: 1305237493}
   - component: {fileID: 1305237492}
+  - component: {fileID: 1305237495}
   m_Layer: 5
   m_Name: ButtonA
   m_TagString: Untagged
@@ -1506,19 +1525,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1305237493}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2013079599}
-        m_TargetAssemblyTypeName: FollowupController, Assembly-CSharp
-        m_MethodName: ReturnToTriage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1305237493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,6 +1564,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305237490}
   m_CullTransparentMesh: 1
+--- !u!114 &1305237495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305237490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485dad6df315d0408122d8b1ea90f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnswerButton
+  actionID: q_back_right_check
+  pointModifier: 0
+  followup: {fileID: 2013079599}
+  returnToTriageOnClick: 1
+  nextPanel: {fileID: 0}
 --- !u!1 &1337749415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,6 +1593,7 @@ GameObject:
   - component: {fileID: 1337749419}
   - component: {fileID: 1337749418}
   - component: {fileID: 1337749417}
+  - component: {fileID: 1337749420}
   m_Layer: 5
   m_Name: ButtonA
   m_TagString: Untagged
@@ -1639,19 +1664,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1337749418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2013079599}
-        m_TargetAssemblyTypeName: FollowupController, Assembly-CSharp
-        m_MethodName: ReturnToTriage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1337749418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1690,6 +1703,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337749415}
   m_CullTransparentMesh: 1
+--- !u!114 &1337749420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337749415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485dad6df315d0408122d8b1ea90f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnswerButton
+  actionID: q_back_right_tourniquet
+  pointModifier: -20
+  followup: {fileID: 2013079599}
+  returnToTriageOnClick: 1
+  nextPanel: {fileID: 0}
 --- !u!1 &1494427177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1871,7 @@ GameObject:
   - component: {fileID: 1511064309}
   - component: {fileID: 1511064308}
   - component: {fileID: 1511064307}
+  - component: {fileID: 1511064310}
   m_Layer: 5
   m_Name: ButtonC
   m_TagString: Untagged
@@ -1911,19 +1942,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1511064308}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2013079599}
-        m_TargetAssemblyTypeName: FollowupController, Assembly-CSharp
-        m_MethodName: ReturnToTriage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1511064308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,6 +1981,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511064305}
   m_CullTransparentMesh: 1
+--- !u!114 &1511064310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511064305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f485dad6df315d0408122d8b1ea90f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnswerButton
+  actionID: q_back_right_check
+  pointModifier: -20
+  followup: {fileID: 2013079599}
+  returnToTriageOnClick: 1
+  nextPanel: {fileID: 0}
 --- !u!1 &1613246547
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,8 +2694,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 591800028}
-  - {fileID: 2130123628}
   - {fileID: 1825216975}
   - {fileID: 1189994657}
   m_Father: {fileID: 0}
@@ -2764,6 +2798,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 684005534}
+  - {fileID: 591800028}
+  - {fileID: 2130123628}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2802,7 +2838,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2013079603}
+  m_Father: {fileID: 2129265446}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}

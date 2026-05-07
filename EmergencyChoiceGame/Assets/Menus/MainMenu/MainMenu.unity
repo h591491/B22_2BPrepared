@@ -486,6 +486,51 @@ MonoBehaviour:
     notDoneText: 
     points: 0
     additionalPoints: 0
+  - id: q_driver
+    done: 0
+    doneText: Supported the arm and kept the driver still
+    notDoneText: Did not handle the shoulder injury safely
+    points: 10
+    additionalPoints: 0
+  - id: q_front
+    done: 0
+    doneText: Kept the front passenger calm and warm
+    notDoneText: Did not handle the suspected internal bleeding safely
+    points: 10
+    additionalPoints: 0
+  - id: q_back_left_check
+    done: 0
+    doneText: Supported the arm and kept the driver still
+    notDoneText: Did not handle the shoulder injury safely
+    points: 10
+    additionalPoints: 0
+  - id: q_back_left_breathing
+    done: 0
+    doneText: Supported the arm and kept the driver still
+    notDoneText: Did not handle the shoulder injury safely
+    points: 10
+    additionalPoints: 0
+  - id: q_back_right_check
+    done: 0
+    doneText: Stopped the bleeding correctly
+    notDoneText: Did not stop the bleeding in time
+    points: 10
+    additionalPoints: 0
+  - id: q_back_right_tourniquet
+    done: 0
+    doneText: Proper use of a tourniquet can save lives, however, improper use can
+      be harmful. Tourniquets should only be used by personnel who have been trained
+    notDoneText: The tourniquet should not be loosened or removed! Tourniquets should
+      only be used by personnel who have been trained
+    points: 10
+    additionalPoints: 0
+  - id: q_monitoring
+    done: 0
+    doneText: Continous monitoring of passengers in an important part of First Aid
+    notDoneText: 'Did not continously monitor all passengers which is an important
+      part of First Aid '
+    points: 10
+    additionalPoints: 0
   gameOverReason: 
 --- !u!114 &159332643
 MonoBehaviour:

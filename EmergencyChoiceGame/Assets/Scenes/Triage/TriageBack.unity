@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 173355386}
   - component: {fileID: 173355390}
   - component: {fileID: 173355391}
+  - component: {fileID: 173355392}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -255,6 +256,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
   lastScene: 
   currentScene: 
+--- !u!114 &173355392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173355385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd1e543975982349a128905392b9229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriageCompletionCheck
+  passengerActionIDs:
+  - passenger_driver
+  - passenger_front
+  - passenger_back_left
+  - passenger_back_right
+  nextScene: PassengerMonitoring
 --- !u!1 &191472046
 GameObject:
   m_ObjectHideFlags: 0
