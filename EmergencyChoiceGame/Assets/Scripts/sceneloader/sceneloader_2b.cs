@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class sceneloader_2b : MonoBehaviour
